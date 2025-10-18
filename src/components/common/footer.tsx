@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-background3 text-primary pt-12 pb-6">
+    <footer className="bg-background3 text-primary pt-4 md:pt-12 pb-3 md:pb-6">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
-        <div className="grid grid-cols-1 sm:grid-cols-4 text-center md:text-left gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-4 text-center md:text-left gap-4 md:gap-8 mb-4 md:mb-8">
           {/* Company Info */}
           <div>
             <div className="w-full flex items-center justify-center md:justify-start gap-2 mb-4">
@@ -97,7 +97,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-gray-300 pt-8 text-center text-sm text-primary">
+        <div className="border-t border-gray-300 pt-3 md:pt-8 text-center text-xs text-primary">
           <p>© 2025 LA Plant Hire. All rights reserved</p>
         </div>
       </div>

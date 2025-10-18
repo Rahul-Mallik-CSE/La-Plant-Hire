@@ -17,13 +17,15 @@ export default function Navbar() {
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="hidden sm:flex items-center gap-2">
-          <Image
-            src="/plant-logo.png"
-            alt="LA Plant Hire Logo"
-            width={40}
-            height={40}
-            className="object-contain"
-          />
+          <Link href={"/"}>
+            <Image
+              src="/plant-logo.png"
+              alt="LA Plant Hire Logo"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
+          </Link>
           <span className="hidden lg:flex font-bold text-xl lg:text-2xl text-primary">
             LA PLANT HIRE
           </span>
@@ -70,33 +72,36 @@ export default function Navbar() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-primary h-6 px-0 hover:bg-transparent hover:text-primary  focus-visible:ring-0"
+                className="text-primary h-6 px-0 hover:bg-transparent hover:text-primary  focus-visible:ring-0 shadow-none"
               >
                 <Menu className="h-6 w-6 " />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-48">
-              <DropdownMenuItem asChild>
-                <Link href="#" className="w-full">
+            <DropdownMenuContent
+              align="end"
+              className="w-12 block sm:hidden border-0 ml-6 mt-0"
+            >
+              <DropdownMenuItem asChild className="focus:bg-primary py-1">
+                <Link href="#" className="w-full ">
                   Home
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="#" className="w-full">
+              <DropdownMenuItem asChild className="focus:bg-primary py-1">
+                <Link href="#" className="w-full ">
                   Truck Fleets
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild>
+              <DropdownMenuItem asChild className="focus:bg-primary py-1">
                 <Link href="#" className="w-full">
                   Equipment
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild>
+              <DropdownMenuItem asChild className="focus:bg-primary py-1">
                 <Link href="#" className="w-full">
                   Materials
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild>
+              <DropdownMenuItem asChild className="focus:bg-primary py-1">
                 <Link href="#" className="w-full">
                   Contact
                 </Link>
@@ -106,7 +111,7 @@ export default function Navbar() {
         </div>
 
         {/* CTA Button - Hidden on mobile */}
-        <Button className="text-xs md:text-sm h-7 sm:h-9 px-2 md:px-4 bg-custom-orange rounded-sm hover:bg-custom-orange/80 border-2 border-orange-700 text-primary font-bold">
+        <Button className="text-xs md:text-sm h-7 sm:h-8 px-2 md:px-4 bg-custom-orange rounded-sm hover:bg-custom-orange/80 border-2 border-orange-700 text-primary font-bold">
           GET A QUOTE
         </Button>
       </div>

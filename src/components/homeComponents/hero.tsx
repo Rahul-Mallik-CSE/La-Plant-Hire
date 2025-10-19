@@ -19,7 +19,7 @@ export default function HeroSection() {
 
       {/* Content Container */}
       <div className="relative h-full flex items-center">
-        <div className="w-full sm:w-1/2 px-8 lg:px-16 flex flex-col justify-center">
+        <div className="w-full sm:w-1/2 px-4 sm:px-6 lg:px-8 xl:px-16 flex flex-col justify-center">
           {/* Heading */}
           <h1 className="text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl max-w-xl text-primary font-black leading-tight mb-2 md:mb-4 lg:mb-6">
             FAMILY-OWNED

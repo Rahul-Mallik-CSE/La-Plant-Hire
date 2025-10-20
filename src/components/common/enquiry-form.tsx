@@ -4,6 +4,8 @@
 
 import React, { useState } from "react";
 import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
 
 const EnquiryForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -31,35 +33,35 @@ const EnquiryForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-secondary rounded-lg p-8">
+    <div className="bg-white rounded-lg p-8">
       <h3 className="text-2xl font-bold text-foreground mb-6">Quick Enquiry</h3>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        <input
+        <Input
           type="text"
           name="name"
           placeholder="Enter your name"
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-white text-foreground placeholder-muted-foreground"
+          className="w-full "
         />
 
-        <input
+        <Input
           type="email"
           name="email"
           placeholder="Email address"
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-white text-foreground placeholder-muted-foreground"
+          className="w-full"
         />
 
-        <input
+        <Input
           type="tel"
           name="phone"
           placeholder="Phone number"
           value={formData.phone}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-white text-foreground placeholder-muted-foreground"
+          className="w-full"
         />
 
         <select
@@ -88,13 +90,13 @@ const EnquiryForm: React.FC = () => {
           <option value="custom">Custom</option>
         </select>
 
-        <textarea
+        <Textarea
           name="details"
           placeholder="Project details..."
           value={formData.details}
           onChange={handleChange}
           rows={4}
-          className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-white text-foreground placeholder-muted-foreground resize-none"
+          className="w-full resize-none"
         />
 
         <Button className="w-full bg-accent hover:bg-[#e67e00] text-foreground font-bold py-3">

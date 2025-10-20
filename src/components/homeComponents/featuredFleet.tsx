@@ -9,7 +9,7 @@ export default function FeaturedFleet() {
     <section className="pb-6 md:pb-8 lg:pb-12 xl:pb-16">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12">
           <p className="text-primary/80 text-xs md:text-base lg:text-xl font-medium sm:font-bold uppercase tracking-wide mb-1 md:mb-2">
             FEATURED FLEET
           </p>
@@ -19,7 +19,7 @@ export default function FeaturedFleet() {
         </div>
 
         {/* Vehicle Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex flex-col md:flex-row  flex-wrap gap-4 xl:gap-12 2xl:gap-32 w-full items-center justify-center ">
           {vehicles.map((vehicle: Vehicle, index: number) => (
             <div
               key={index}

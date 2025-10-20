@@ -3,6 +3,7 @@
 import FeaturedFleet from "@/components/homeComponents/featuredFleet";
 import HeroSection from "@/components/homeComponents/hero";
 import Services from "@/components/homeComponents/services";
+import StatsAndForm from "@/components/homeComponents/stats-and-form";
 
 export default function Home() {
   return (
@@ -15,6 +16,9 @@ export default function Home() {
 
       {/* featured fleet section */}
       <FeaturedFleet />
+
+      {/* stats and form section */}
+      <StatsAndForm />
     </div>
   );
 }

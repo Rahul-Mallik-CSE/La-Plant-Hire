@@ -12,7 +12,7 @@ export default function Services() {
     <section className="py-6 md:py-8 lg:py-12 xl:py-16 ">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
         {/* Header */}
-        <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-12">
+        <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-12 text-center sm:text-left">
           <p className="text-primary/80 text-xs md:text-base lg:text-xl font-medium sm:font-bold uppercase tracking-wide mb-1 md:mb-2">
             OUR SERVICES
           </p>
@@ -29,7 +29,7 @@ export default function Services() {
         {/* Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-background2 rounded-lg">
           {services.map((service: Service, index: number) => (
-            <div key={index} className=" p-2 md:p-4  flex gap-4">
+            <div key={index} className=" p-2 md:p-4  flex gap-4 ">
               <div className="">
                 <div className="!w-10 !h-10 bg-primary rounded-full flex items-center justify-center text-2xl mb-4">
                   <Image

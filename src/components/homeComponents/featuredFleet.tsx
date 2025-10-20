@@ -21,28 +21,25 @@ export default function FeaturedFleet() {
         {/* Vehicle Cards */}
         <div className="flex flex-col md:flex-row  flex-wrap gap-4 xl:gap-12 2xl:gap-32 w-full items-center justify-center ">
           {vehicles.map((vehicle: Vehicle, index: number) => (
-            <div
-              key={index}
-              className="max-w-96 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition"
-            >
+            <div key={index} className="max-w-96  min-w-80 overflow-hidden ">
               <div
-                className="h-48 bg-cover bg-center"
+                className="h-40 sm:h-48 bg-cover bg-center"
                 style={{ backgroundImage: `url(${vehicle.image})` }}
               />
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-2">
+              <div className="py-3 sm:py-6">
+                <h3 className="text-base sm:text-xl font-bold text-primary mb-1 sm:mb-2">
                   {vehicle.title}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-primary text-xs sm:text-sm mb-3 sm:mb-4">
                   {vehicle.specs}
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-lg font-bold text-foreground">
+                  <span className="text-base sm:text-lg font-bold text-primary">
                     {vehicle.price}
                   </span>
                   <Button
                     variant="outline"
-                    className="border-foreground text-foreground hover:bg-foreground/10 text-sm font-bold bg-transparent"
+                    className="px-2 sm:px-3 h-7 sm:h-9 border-primary text-primary hover:text-primary hover:bg-primary/5 text-xs sm:text-sm font-medium sm:font-bold bg-transparent border sm:border-2 rounded-sm"
                   >
                     ENQUIRE NOW
                   </Button>

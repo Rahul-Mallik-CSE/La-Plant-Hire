@@ -13,7 +13,7 @@ export default function Footer() {
             <div className="w-full flex items-center justify-center md:justify-start gap-2 mb-4">
               <Link href={"/"}>
                 <Image
-                  src="/plant-logo.png"
+                  src="/logo/plant-logo.png"
                   alt="LA Plant Hire Logo"
                   width={40}
                   height={40}

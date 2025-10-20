@@ -28,7 +28,7 @@ export default function HeroSection() {
           </h1>
 
           {/* Description */}
-          <p className=" text-primary text-xs md:text-sm lg:text-base leading-relaxed mb-2 md:mb-4 lg:mb-8 max-w-xl">
+          <p className="text-primary text-xs md:text-sm lg:text-base leading-relaxed mb-2 md:mb-4 lg:mb-8 max-w-xl">
             Trusted Truck & Equipment Hire in Queensland. Professional service,
             competitive rates, and reliable equipment for all your construction
             needs.

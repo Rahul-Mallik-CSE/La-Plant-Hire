@@ -6,6 +6,13 @@ import React, { useState } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 
 const EnquiryForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -64,31 +71,39 @@ const EnquiryForm: React.FC = () => {
           className="w-full"
         />
 
-        <select
-          name="service"
+        <Select
           value={formData.service}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-white text-foreground"
+          onValueChange={(value) =>
+            setFormData((prev) => ({ ...prev, service: value }))
+          }
         >
-          <option value="">Select service</option>
-          <option value="truck">Truck Hire</option>
-          <option value="equipment">Equipment Hire</option>
-          <option value="material">Material Delivery</option>
-          <option value="soil">Soil Register</option>
-        </select>
+          <SelectTrigger className="w-full">
+            <SelectValue placeholder="Select service" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="truck">Truck Hire</SelectItem>
+            <SelectItem value="equipment">Equipment Hire</SelectItem>
+            <SelectItem value="material">Material Delivery</SelectItem>
+            <SelectItem value="soil">Soil Register</SelectItem>
+          </SelectContent>
+        </Select>
 
-        <select
-          name="duration"
+        <Select
           value={formData.duration}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-white text-foreground"
+          onValueChange={(value) =>
+            setFormData((prev) => ({ ...prev, duration: value }))
+          }
         >
-          <option value="">Select duration</option>
-          <option value="1day">1 Day</option>
-          <option value="1week">1 Week</option>
-          <option value="1month">1 Month</option>
-          <option value="custom">Custom</option>
-        </select>
+          <SelectTrigger className="w-full">
+            <SelectValue placeholder="Select duration" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="1day">1 Day</SelectItem>
+            <SelectItem value="1week">1 Week</SelectItem>
+            <SelectItem value="1month">1 Month</SelectItem>
+            <SelectItem value="custom">Custom</SelectItem>
+          </SelectContent>
+        </Select>
 
         <Textarea
           name="details"

@@ -40,8 +40,8 @@ const EnquiryForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg p-8">
-      <h3 className="text-2xl font-bold text-foreground mb-6 text-center md:text-left">
+    <div className="bg-white rounded-lg p-4 sm:p-8 shadow-lg ">
+      <h3 className="text-base sm:text-xl font-bold text-primary mb-3 sm:6 text-center md:text-left">
         Quick Enquiry
       </h3>
 
@@ -79,7 +79,7 @@ const EnquiryForm: React.FC = () => {
             setFormData((prev) => ({ ...prev, service: value }))
           }
         >
-          <SelectTrigger className="w-full border sm:border-2 border-primary focus-visible:ring-0 text-xs sm:text-sm text-primary placeholder:text-primary/50 h-9 sm:h-12">
+          <SelectTrigger className="w-full border sm:border-2 border-primary focus-visible:ring-0 text-xs sm:text-sm text-primary placeholder:text-primary/50 py-4 sm:py-5">
             <SelectValue placeholder="Select service" />
           </SelectTrigger>
           <SelectContent>
@@ -96,7 +96,7 @@ const EnquiryForm: React.FC = () => {
             setFormData((prev) => ({ ...prev, duration: value }))
           }
         >
-          <SelectTrigger className="w-full border sm:border-2 border-primary focus-visible:ring-0 text-xs sm:text-sm text-primary placeholder:text-primary/50 h-9 sm:h-11">
+          <SelectTrigger className="w-full border sm:border-2 border-primary focus-visible:ring-0 text-xs sm:text-sm text-primary placeholder:text-primary/50 py-4 sm:py-5">
             <SelectValue placeholder="Select duration" />
           </SelectTrigger>
           <SelectContent>
@@ -116,13 +116,22 @@ const EnquiryForm: React.FC = () => {
           className="w-full resize-none border sm:border-2 border-primary focus-visible:ring-0 text-xs sm:text-sm text-primary placeholder:text-primary/50 "
         />
 
-        <Button className="w-full bg-accent hover:bg-[#e67e00] text-foreground font-bold py-3">
-          SEND ENQUIRY
-        </Button>
+        <div className="w-full flex md:justify-end">
+          <Button className="w-full md:w-32 text-xs sm:text-sm  bg-custom-orange hover:bg-[#e67e00] text-primary font-bold py-2 sm:py-3">
+            SEND ENQUIRY
+          </Button>
+        </div>
+        <div className="w-full flex justify-end">
+          <div className="space-y-0 sm:space-y-2">
+            <p className="text-xs text-primary/50 text-center">
+              ABN: 65107940552
+            </p>
 
-        <p className="text-xs text-muted-foreground text-center">
-          <span className="text-accent">*</span> We will respond within 24 hours
-        </p>
+            <p className="text-xs text-primary/50 text-center">
+              Licensed & Insured
+            </p>
+          </div>
+        </div>
       </form>
     </div>
   );

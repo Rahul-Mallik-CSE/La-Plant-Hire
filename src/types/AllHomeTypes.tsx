@@ -6,3 +6,10 @@ export interface Service {
   description: string;
   price: string;
 }
+
+export interface Vehicle {
+  image: string;
+  title: string;
+  specs: string;
+  price: string;
+}

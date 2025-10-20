@@ -19,7 +19,7 @@ export default function Navbar() {
         <div className="hidden sm:flex items-center gap-2">
           <Link href={"/"}>
             <Image
-              src="/plant-logo.png"
+              src="/logo/plant-logo.png"
               alt="LA Plant Hire Logo"
               width={40}
               height={40}

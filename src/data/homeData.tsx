@@ -1,6 +1,6 @@
 /** @format */
 
-import { Service } from "@/types/AllHomeTypes";
+import { Service, Vehicle } from "@/types/AllHomeTypes";
 
 const services: Service[] = [
   {
@@ -29,3 +29,24 @@ const services: Service[] = [
   },
 ];
 export { services };
+
+export const vehicles: Vehicle[] = [
+  {
+    image: "/products/heavy-duty-tipper.jpg",
+    title: "Heavy Duty Tipper",
+    specs: "10m Tippers, 6x4, Steel body with swinging gates",
+    price: "$220/day",
+  },
+  {
+    image: "/products/truck-and-trailer-hire.jpg",
+    title: "Truck and Trailer Hire",
+    specs: "20 Tonnes • Ideal for excavation and demolition",
+    price: "$220/day",
+  },
+  {
+    image: "/products/equipment-hire.jpg",
+    title: "Equipment Hire",
+    specs: "25 Tonnes • Perfect for large construction projects",
+    price: "$220/day",
+  },
+];

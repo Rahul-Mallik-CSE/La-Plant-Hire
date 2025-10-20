@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function Services() {
   return (
-    <section className="py-6 md:py-8 lg:py-12 xl:py-16 bg-white">
+    <section className="py-6 md:py-8 lg:py-12 xl:py-16 ">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
         {/* Header */}
         <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-12">

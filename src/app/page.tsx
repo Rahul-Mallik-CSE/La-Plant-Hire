@@ -1,5 +1,6 @@
 /** @format */
 
+import FeaturedFleet from "@/components/homeComponents/featuredFleet";
 import HeroSection from "@/components/homeComponents/hero";
 import Services from "@/components/homeComponents/services";
 
@@ -11,6 +12,9 @@ export default function Home() {
 
       {/* Service Section */}
       <Services />
+
+      {/* featured fleet section */}
+      <FeaturedFleet />
     </div>
   );
 }

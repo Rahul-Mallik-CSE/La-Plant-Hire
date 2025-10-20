@@ -1,8 +1,8 @@
 /** @format */
 
-import { Button } from "@/components/ui/button";
 import { vehicles } from "@/data/homeData";
 import type { Vehicle } from "@/types/AllHomeTypes";
+import VehicleCard from "../common/vehicle-card";
 
 export default function FeaturedFleet() {
   return (
@@ -21,31 +21,7 @@ export default function FeaturedFleet() {
         {/* Vehicle Cards */}
         <div className="flex flex-col md:flex-row  flex-wrap gap-4 xl:gap-12 2xl:gap-32 w-full items-center justify-center ">
           {vehicles.map((vehicle: Vehicle, index: number) => (
-            <div key={index} className="max-w-96  min-w-80 overflow-hidden ">
-              <div
-                className="h-40 sm:h-48 bg-cover bg-center"
-                style={{ backgroundImage: `url(${vehicle.image})` }}
-              />
-              <div className="py-3 sm:py-6">
-                <h3 className="text-base sm:text-xl font-bold text-primary mb-1 sm:mb-2">
-                  {vehicle.title}
-                </h3>
-                <p className="text-primary text-xs sm:text-sm mb-3 sm:mb-4">
-                  {vehicle.specs}
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-base sm:text-lg font-bold text-primary">
-                    {vehicle.price}
-                  </span>
-                  <Button
-                    variant="outline"
-                    className="px-2 sm:px-3 h-7 sm:h-9 border-primary text-primary hover:text-primary hover:bg-primary/5 text-xs sm:text-sm font-medium sm:font-bold bg-transparent border sm:border-2 rounded-sm"
-                  >
-                    ENQUIRE NOW
-                  </Button>
-                </div>
-              </div>
-            </div>
+            <VehicleCard key={index} vehicle={vehicle} />
           ))}
         </div>
       </div>

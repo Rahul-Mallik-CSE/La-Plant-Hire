@@ -10,6 +10,6 @@ export interface Service {
 export interface Vehicle {
   image: string;
   title: string;
-  specs: string;
+  description: string;
   price: string;
 }

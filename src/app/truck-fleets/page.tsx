@@ -1,5 +1,6 @@
 /** @format */
 
+import CTAsection from "@/components/truckfleetsComponents/CTAsection";
 import TruckFleetsHero from "@/components/truckfleetsComponents/truck-fleets-hero";
 import TruckFleetsServices from "@/components/truckfleetsComponents/truck-fleets-services";
 
@@ -13,6 +14,9 @@ const TruckFleetsPage = () => {
 
       {/* TruckFleetsServices section */}
       <TruckFleetsServices />
+
+      {/* CTA Section */}
+      <CTAsection />
     </div>
   );
 };

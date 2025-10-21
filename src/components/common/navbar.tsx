@@ -34,13 +34,13 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden sm:flex items-center gap-1 bg-primary rounded-lg px-2 lg:px-6 py-1">
           <Link
-            href="#"
+            href="/"
             className="text-white text-sm font-medium px-1 lg:px-3 py-1 hover:bg-primary/80 rounded-full transition"
           >
             Home
           </Link>
           <Link
-            href="#"
+            href="/truck-fleets"
             className="text-white text-sm font-medium px-1 lg:px-3 py-1 hover:bg-primary/80 rounded-full transition"
           >
             Truck Fleets

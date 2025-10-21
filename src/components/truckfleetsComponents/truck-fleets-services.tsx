@@ -17,7 +17,7 @@ const TruckFleetsServices = () => {
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-2 sm:px-3 md:px-4 py-0 sm:py-0.5 md:py-1 rounded-full font-medium transition ${
+              className={`cursor-pointer px-2 sm:px-3 md:px-4 py-0 sm:py-0.5 md:py-1 rounded-full font-medium transition ${
                 activeFilter === filter
                   ? "bg-[#121221] text-white"
                   : "bg-white border-2 border-[#c4c4c8] text-[#121221] hover:border-[#121221]"
@@ -30,7 +30,7 @@ const TruckFleetsServices = () => {
       </section>
 
       {/* Trucks Grid */}
-      <section className="max-w-full mx-auto px-4 pb-16">
+      <section className="max-w-full mx-auto px-4 ">
         <div className="flex flex-col md:flex-row  flex-wrap  gap-4 sm:gap-8 md:gap-12 xl:gap-16  items-center justify-center">
           {trucks.map((truck) => (
             <VehicleCard key={truck.title} vehicle={truck} />

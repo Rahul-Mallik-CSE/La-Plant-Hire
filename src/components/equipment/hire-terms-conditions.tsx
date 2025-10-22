@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { Button } from "../ui/button";
 
 const HireTermsConditions = () => {
   return (
@@ -68,9 +69,9 @@ const HireTermsConditions = () => {
         </div>
       </div>
 
-      <button className="bg-accent text-white px-6 py-3 rounded font-bold text-sm hover:bg-[#e67e00] transition">
+      <Button className="bg-custom-orange border-1 md:border-2 border-primary text-primary px-4 py-2.5 rounded font-bold text-xs md:text-sm hover:bg-[#e67e00] transition">
         DOWNLOAD HIRE TERMS PDF
-      </button>
+      </Button>
     </div>
   );
 };

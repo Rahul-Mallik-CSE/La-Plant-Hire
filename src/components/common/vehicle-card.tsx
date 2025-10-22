@@ -20,7 +20,7 @@ const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
           {vehicle.title}
         </h3>
         <p className="text-primary text-xs sm:text-sm mb-3 sm:mb-4">
-          {vehicle.specs}
+          {vehicle.description}
         </p>
         <div className="flex items-center justify-between">
           <span className="text-base sm:text-lg font-bold text-primary">

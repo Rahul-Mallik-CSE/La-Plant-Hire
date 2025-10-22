@@ -14,7 +14,7 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <header className="bg-white ">
-      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 py-3 flex items-center justify-between">
+      <div className="max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="hidden sm:flex items-center gap-2">
           <Link href={"/"}>

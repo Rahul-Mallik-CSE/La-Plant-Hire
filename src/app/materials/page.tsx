@@ -11,6 +11,7 @@ const MaterialPage = () => {
         title="Materials We Supply"
         description="Sand, Gravel, Recycled Concrete, and Soil for All Your Projects."
         bgColor="bg-[#1E1614]"
+        textColor="text-white"
       />
     </div>
   );

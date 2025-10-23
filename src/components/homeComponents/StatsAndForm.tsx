@@ -1,6 +1,6 @@
 /** @format */
 
-import Stats from "./Stats";
+import Stats from "./SubComponents/Stats";
 import EnquiryForm from "@/components/Common/EnquiryForm";
 
 export default function StatsAndForm() {

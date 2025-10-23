@@ -13,7 +13,7 @@ const TermsAndForm = () => {
           <HireTermsConditions />
 
           {/* Right Column - Form */}
-          <EnquiryForm />
+          <EnquiryForm showHeaderWithIcon={true} />
         </div>
       </div>
     </section>

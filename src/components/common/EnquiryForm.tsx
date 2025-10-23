@@ -14,7 +14,15 @@ import {
   SelectValue,
 } from "../ui/select";
 
-const EnquiryForm: React.FC = () => {
+import { PiHandshake } from "react-icons/pi";
+
+interface EnquiryFormProps {
+  showHeaderWithIcon?: boolean;
+}
+
+const EnquiryForm: React.FC<EnquiryFormProps> = ({
+  showHeaderWithIcon = false,
+}) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -41,9 +49,23 @@ const EnquiryForm: React.FC = () => {
 
   return (
     <div className="bg-white rounded-lg p-4 sm:p-8 shadow-lg ">
-      <h3 className="text-base sm:text-xl font-bold text-primary mb-3 sm:6 text-center md:text-left">
-        Quick Enquiry
-      </h3>
+      {showHeaderWithIcon ? (
+        <div className="flex flex-col items-center mb-3 sm:mb-6">
+          <div className="w-12 h-12 bg-transparent flex items-center justify-center ">
+            <PiHandshake className="w-6 sm:h-8 h-6 sm:w-8 text-custom-orange font-bold" />
+          </div>
+          <h3 className="text-base sm:text-xl font-bold text-primary text-center">
+            Ready to Hire?
+          </h3>
+          <p className="text-xs sm:text-sm text-primary/70 text-center">
+            Get your equipment quote in minutes
+          </p>
+        </div>
+      ) : (
+        <h3 className="text-base sm:text-xl font-bold text-primary mb-3 sm:6 text-center md:text-left">
+          Quick Enquiry
+        </h3>
+      )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <Input

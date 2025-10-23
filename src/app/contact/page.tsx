@@ -9,7 +9,7 @@ const ContactPage = () => {
       {/* hero section */}
       <CommonHero
         title="Soil Wanted Register"
-        description="Ready to discuss your project? We`&apos`re here to help with all your trucking, soil removal, and material delivery needs."
+        description="Ready to discuss your project? We're here to help with all your trucking, soil removal, and material delivery needs."
         bgColor="bg-[#121221]"
         textColor="text-white"
       />

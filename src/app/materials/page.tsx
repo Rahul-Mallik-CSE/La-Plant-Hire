@@ -8,9 +8,9 @@ const MaterialPage = () => {
     <div>
       {/* hero section */}
       <CommonHero
-        title="Our fleets of 10+ trucks"
-        description="Professional grade trucks for every hauling need. From single body trucks to heavy-duty truck and dog combinations, we have the right vehicle for your project."
-        bgColor="bg-background2"
+        title="Materials We Supply"
+        description="Sand, Gravel, Recycled Concrete, and Soil for All Your Projects."
+        bgColor="bg-[#1E1614]"
       />
     </div>
   );

@@ -52,13 +52,13 @@ export default function Navbar() {
             Equipment
           </Link>
           <Link
-            href="#"
+            href="/materials"
             className="text-white text-sm font-medium px-1 lg:px-3 py-1 hover:bg-primary/80 rounded-full transition"
           >
             Materials
           </Link>
           <Link
-            href="#"
+            href="/contact"
             className="text-white text-sm font-medium px-1 lg:px-3 py-1 hover:bg-primary/80 rounded-full transition"
           >
             Contact
@@ -97,12 +97,12 @@ export default function Navbar() {
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild className="focus:bg-primary py-1">
-                <Link href="#" className="w-full">
+                <Link href="/materials" className="w-full">
                   Materials
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild className="focus:bg-primary py-1">
-                <Link href="#" className="w-full">
+                <Link href="/contact" className="w-full">
                   Contact
                 </Link>
               </DropdownMenuItem>

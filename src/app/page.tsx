@@ -1,9 +1,9 @@
 /** @format */
 
-import FeaturedFleet from "@/components/homeComponents/featuredFleet";
-import HeroSection from "@/components/homeComponents/hero";
-import Services from "@/components/homeComponents/services";
-import StatsAndForm from "@/components/homeComponents/stats-and-form";
+import FeaturedFleet from "@/components/HomeComponents/FeaturedFleet";
+import HeroSection from "@/components/HomeComponents/Hero";
+import Services from "@/components/HomeComponents/Services";
+import StatsAndForm from "@/components/HomeComponents/StatsAndForm";
 
 export default function Home() {
   return (

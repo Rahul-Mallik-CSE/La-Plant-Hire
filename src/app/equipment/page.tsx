@@ -1,8 +1,8 @@
 /** @format */
 
-import EquipmentHero from "@/components/equipment/equipmentHero";
-import TermsAndForm from "@/components/equipment/terms-and-form";
-import CTAsection from "@/components/truckfleetsComponents/CTAsection";
+import EquipmentHero from "@/components/Equipment/EquipmentHero";
+import TermsAndForm from "@/components/Equipment/TermsAndForm";
+import CTAsection from "@/components/TruckFleetsComponents/CTASection";
 import React from "react";
 
 const EquipmentPage = () => {

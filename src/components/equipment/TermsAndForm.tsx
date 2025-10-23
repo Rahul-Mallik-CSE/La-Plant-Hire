@@ -1,8 +1,8 @@
 /** @format */
 
 import React from "react";
-import EnquiryForm from "../common/enquiry-form";
-import HireTermsConditions from "./hire-terms-conditions";
+import EnquiryForm from "../Common/EnquiryForm";
+import HireTermsConditions from "./HireTermsConditions";
 
 const TermsAndForm = () => {
   return (

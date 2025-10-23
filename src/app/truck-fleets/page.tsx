@@ -1,8 +1,8 @@
 /** @format */
 
-import CTAsection from "@/components/truckfleetsComponents/CTAsection";
-import TruckFleetsHero from "@/components/truckfleetsComponents/truck-fleets-hero";
-import TruckFleetsServices from "@/components/truckfleetsComponents/truck-fleets-services";
+import CTAsection from "@/components/TruckFleetsComponents/CTASection";
+import TruckFleetsHero from "@/components/TruckFleetsComponents/TruckFleetsHero";
+import TruckFleetsServices from "@/components/TruckFleetsComponents/TruckFleetsServices";
 
 import React from "react";
 

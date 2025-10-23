@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 
 import { trucks } from "@/data/truckfleetsData";
-import VehicleCard from "../common/vehicle-card";
+import VehicleCard from "../Common/VehicleCard";
 
 const TruckFleetsServices = () => {
   const [activeFilter, setActiveFilter] = useState("All");

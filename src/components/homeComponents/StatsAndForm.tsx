@@ -1,7 +1,7 @@
 /** @format */
 
-import Stats from "./stats";
-import EnquiryForm from "@/components/common/enquiry-form";
+import Stats from "./Stats";
+import EnquiryForm from "@/components/Common/EnquiryForm";
 
 export default function StatsAndForm() {
   return (

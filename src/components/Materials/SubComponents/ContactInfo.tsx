@@ -1,69 +1,40 @@
 /** @format */
 
-import { MapPin, Phone, Mail, Globe, Building2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { contactInfoData } from "@/data/materialsData";
+import { ContactInfoItem } from "@/types/materialsTypes";
+import { FaDirections } from "react-icons/fa";
 
 export default function ContactInfo() {
   return (
-    <div className="bg-white rounded-lg p-8 shadow-sm border border-border">
-      <h2 className="text-2xl font-bold text-foreground mb-8">
+    <div className="bg-white min-w-72 rounded-sm p-8 shadow-sm border border-border">
+      <h2 className="text-base md:text-lg font-bold text-primary mb-2 md:mb-4">
         Contact Information
       </h2>
 
-      <div className="space-y-6">
-        {/* Company */}
-        <div className="flex gap-4">
-          <Building2 className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-          <div>
-            <p className="font-semibold text-foreground">Company</p>
-            <p className="text-sm text-muted-foreground">LA Trading Pty Ltd</p>
-            <p className="text-sm text-muted-foreground">ABN: 65107948032</p>
+      <div className="space-y-2 md:space-y-4">
+        {/* Map through contact info items */}
+        {contactInfoData.map((item: ContactInfoItem, index: number) => (
+          <div key={index} className="flex items-center gap-4">
+            <item.icon className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <p className="text-sm font-medium text-primary">{item.label}</p>
+              {item.details.map((detail: string, detailIndex: number) => (
+                <p key={detailIndex} className="text-xs text-primary">
+                  {detail}
+                </p>
+              ))}
+            </div>
           </div>
-        </div>
-
-        {/* Address */}
-        <div className="flex gap-4">
-          <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-          <div>
-            <p className="font-semibold text-foreground">Address</p>
-            <p className="text-sm text-muted-foreground">292 Wynne Road</p>
-            <p className="text-sm text-muted-foreground">Holmview QLD 4207</p>
-          </div>
-        </div>
-
-        {/* Phone */}
-        <div className="flex gap-4">
-          <Phone className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-          <div>
-            <p className="font-semibold text-foreground">Phone</p>
-            <p className="text-sm text-muted-foreground">0414 44 55 10</p>
-          </div>
-        </div>
-
-        {/* Email */}
-        <div className="flex gap-4">
-          <Mail className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-          <div>
-            <p className="font-semibold text-foreground">Email</p>
-            <p className="text-sm text-muted-foreground">
-              info@latrading.com.au
-            </p>
-          </div>
-        </div>
-
-        {/* Website */}
-        <div className="flex gap-4">
-          <Globe className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-          <div>
-            <p className="font-semibold text-foreground">Website</p>
-            <p className="text-sm text-muted-foreground">latrading.com.au</p>
-          </div>
-        </div>
+        ))}
 
         {/* Get Directions Button */}
-        <button className="w-full bg-[#36b37e] hover:bg-[#229f6a] text-white font-bold py-3 rounded transition flex items-center justify-center gap-2 mt-8">
-          <span>📍</span>
-          GET DIRECTIONS
-        </button>
+        <div className="w-full flex justify-end">
+          <Button className="text-xs h-8 px-2 bg-emerald-500 hover:bg-emerald-600 border-emerald-700 text-white font-bold  rounded transition flex items-center justify-center gap-1.5 mt-8">
+            <FaDirections className="w-3 h-3 text-white " />
+            GET DIRECTIONS
+          </Button>
+        </div>
       </div>
     </div>
   );

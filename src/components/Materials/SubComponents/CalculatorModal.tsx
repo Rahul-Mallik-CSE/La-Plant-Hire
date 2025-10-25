@@ -53,19 +53,19 @@ export default function CalculatorModal({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[400px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl sm:text-3xl font-bold text-primary">
+          <DialogTitle className="text-base  sm:text-lg font-bold text-primary">
             Tipper Truck Load Calculator
           </DialogTitle>
-          <p className="text-sm text-primary/70">
+          <p className="text-xs sm:text-sm text-primary">
             Enter soil dimensions to calculate volume and required loads
           </p>
         </DialogHeader>
 
-        <div className="space-y-6 mt-4">
+        <div className="space-y-4">
           {/* Dimension Inputs */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-1 sm:gap-2">
             <div>
-              <label className="text-sm font-semibold text-primary mb-2 block">
+              <label className="text-xs sm:text-sm font-medium text-primary mb-2 block">
                 Length
               </label>
               <Input
@@ -80,7 +80,7 @@ export default function CalculatorModal({
             </div>
 
             <div>
-              <label className="text-sm font-semibold text-primary mb-2 block">
+              <label className="text-xs sm:text-sm font-medium text-primary mb-2 block">
                 Width
               </label>
               <Input
@@ -95,7 +95,7 @@ export default function CalculatorModal({
             </div>
 
             <div>
-              <label className="text-sm font-semibold text-primary mb-2 block">
+              <label className="text-xs sm:text-sm font-medium text-primary mb-2 block">
                 Height
               </label>
               <Input
@@ -104,64 +104,68 @@ export default function CalculatorModal({
                 onChange={(e) =>
                   setDimensions((prev) => ({ ...prev, height: e.target.value }))
                 }
-                className="w-full border-2 border-primary focus-visible:ring-0 text-center"
+                className="w-full  border-2 border-primary focus-visible:ring-0 text-center"
                 placeholder="2m"
               />
             </div>
           </div>
 
           {/* Calculate Button */}
-          <Button
-            onClick={calculateVolume}
-            className="w-full bg-custom-orange hover:bg-custom-orange/80 text-white font-bold py-3"
-          >
-            CALCULATE VOLUME
-          </Button>
-
+          <div className="w-full flex sm:justify-end">
+            <Button
+              onClick={calculateVolume}
+              className="w-full sm:w-fit h-8 border-2 border-amber-800 rounded-sm bg-custom-orange hover:bg-custom-orange/80 text-primary font-bold py-3"
+            >
+              CALCULATE VOLUME
+            </Button>
+          </div>
           {/* Results Section */}
-          {showResults && (
-            <div className="bg-background2 rounded-lg p-6 space-y-4">
-              <h3 className="text-xl font-bold text-primary mb-4">Results</h3>
 
-              <div className="flex justify-between items-center pb-4">
-                <span className="text-primary font-medium">Soil Volume:</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-xl font-bold text-primary">
-                    {result.soilVolume.toFixed(2)} m³
-                  </span>
-                  <Button
-                    variant="link"
-                    className="text-blue-500 hover:text-blue-700 p-0 h-auto"
-                    onClick={() => setShowResults(false)}
-                  >
-                    Edit
-                  </Button>
-                </div>
+          <div className="bg-[#36B37E0D] rounded-lg p-4 ">
+            <h3 className="text-base  sm:text-lg font-bold text-primary sm:mb-1 md:mb-2">
+              Results
+            </h3>
+
+            <div className="flex justify-between items-center pb-4">
+              <span className="text-xs sm:text-sm text-primary ">
+                Soil Volume:
+              </span>
+              <div className="flex items-center gap-2">
+                <span className="text-xs sm:text-sm text-primary">
+                  {result.soilVolume.toFixed(2)} m³
+                </span>
+                <Button
+                  variant="link"
+                  className="text-blue-500 hover:text-blue-700 p-0 h-auto"
+                  onClick={() => setShowResults(false)}
+                >
+                  Edit
+                </Button>
               </div>
-
-              <div className="flex justify-between items-center border-t border-primary/20 pt-4">
-                <span className="text-primary font-medium">
-                  Truck Capacity:
-                </span>
-                <span className="text-lg font-semibold text-primary">
-                  {result.truckCapacity} m³ / load
-                </span>
-              </div>
-
-              <div className="flex justify-between items-center border-t border-primary/20 pt-4">
-                <span className="text-primary font-medium">
-                  Estimated Loads Required
-                </span>
-                <span className="text-2xl font-bold text-primary">
-                  {result.estimatedLoads} loads
-                </span>
-              </div>
-
-              <p className="text-xs text-custom-orange pt-4">
-                *Based on standard tipper truck capacity. Actual loads may vary.
-              </p>
             </div>
-          )}
+
+            <div className="flex justify-between items-center  border-primary/20 pb-4">
+              <span className="text-xs sm:text-sm text-primary ">
+                Truck Capacity:
+              </span>
+              <span className="text-xs sm:text-sm text-primary">
+                {result.truckCapacity} m³ / load
+              </span>
+            </div>
+
+            <div className="flex justify-between items-center border-t border-primary/20 pt-2">
+              <span className="text-xs sm:text-sm text-primary font-medium">
+                Estimated Loads Required
+              </span>
+              <span className="text-xs sm:text-sm font-bold text-primary">
+                {result.estimatedLoads} loads
+              </span>
+            </div>
+
+            <p className="text-xs text-custom-orange pt-4">
+              *Based on standard tipper truck capacity. Actual loads may vary.
+            </p>
+          </div>
         </div>
       </DialogContent>
     </Dialog>

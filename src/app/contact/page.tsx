@@ -1,6 +1,7 @@
 /** @format */
 
 import CommonHero from "@/components/Common/CommonHero";
+import FindUs from "@/components/Materials/FindUs";
 import RegisterForm from "@/components/Materials/RegisterForm";
 import React from "react";
 
@@ -17,6 +18,9 @@ const ContactPage = () => {
 
       {/* registration form */}
       <RegisterForm />
+
+      {/* Find us here */}
+      <FindUs />
     </div>
   );
 };

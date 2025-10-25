@@ -31,7 +31,6 @@ export default function CalculatorModal({
     truckCapacity: 6.7,
     estimatedLoads: 0,
   });
-  const [showResults, setShowResults] = useState(false);
 
   const calculateVolume = () => {
     const length = parseFloat(dimensions.length);
@@ -46,7 +45,6 @@ export default function CalculatorModal({
       soilVolume: volume,
       estimatedLoads: loads,
     });
-    setShowResults(true);
   };
 
   return (
@@ -152,7 +150,6 @@ export default function CalculatorModal({
                 <Button
                   variant="link"
                   className="text-blue-500 hover:text-blue-700 p-0 h-auto"
-                  onClick={() => setShowResults(false)}
                 >
                   Edit
                 </Button>

@@ -7,7 +7,7 @@ import { FaDirections } from "react-icons/fa";
 
 export default function ContactInfo() {
   return (
-    <div className="bg-white min-w-72 rounded-sm p-8 shadow-sm border border-border">
+    <div className="bg-white min-w-72 h-fit rounded-sm p-8 shadow-sm border border-border">
       <h2 className="text-base md:text-lg font-bold text-primary mb-2 md:mb-4">
         Contact Information
       </h2>

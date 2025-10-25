@@ -8,7 +8,7 @@ const RegisterForm = () => {
   return (
     <section className=" bg-background2 mx-auto py-6 md:py-8 lg:py-12 xl:py-16 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
-        <div className="w-full flex  justify-center gap-4  ">
+        <div className="w-full flex flex-col sm:flex-row justify-center gap-4 lg:gap-8 xl:gap-12 ">
           {/* Contact info left side */}
           <ContactInfo />
 

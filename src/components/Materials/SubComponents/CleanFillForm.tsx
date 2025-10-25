@@ -45,7 +45,7 @@ export default function CleanFillForm() {
 
   return (
     <div className="w-full bg-white rounded-lg p-8 shadow-sm border border-border">
-      <h2 className="text-2xl font-bold text-foreground mb-8">
+      <h2 className="text-xl md:text-2xl xl:text-3xl font-bold text-primary mb-3 md:mb-6 xl:mb-8">
         Clean Fill Form
       </h2>
 
@@ -114,8 +114,8 @@ export default function CleanFillForm() {
             type="button"
             className="bg-foreground lg:h-11 hover:bg-primary text-white font-bold"
           >
-            <Calculator className="w-5 h-5 mr-2" />
-            m³ volume calculator
+            <Calculator className="w-3 h-3 mr-0" />
+            try volume calculator
           </Button>
         </div>
 
@@ -159,7 +159,7 @@ export default function CleanFillForm() {
         <div className="flex justify-end">
           <Button
             type="submit"
-            className="bg-accent lg:h-11 hover:bg-[#b36303] text-white font-bold px-8"
+            className="w-full sm:w-fit bg-custom-orange rounded-sm hover:bg-[#b36303] border-2 border-amber-800 text-white font-bold px-8"
           >
             SUBMIT
           </Button>

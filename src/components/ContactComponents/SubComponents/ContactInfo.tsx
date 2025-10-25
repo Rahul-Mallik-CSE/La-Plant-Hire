@@ -1,8 +1,8 @@
 /** @format */
 
 import { Button } from "@/components/ui/button";
-import { contactInfoData } from "@/data/materialsData";
-import { ContactInfoItem } from "@/types/materialsTypes";
+import { contactInfoData } from "@/data/contactData";
+import { ContactInfoItem } from "@/types/contactTypes";
 import { FaDirections } from "react-icons/fa";
 
 export default function ContactInfo() {

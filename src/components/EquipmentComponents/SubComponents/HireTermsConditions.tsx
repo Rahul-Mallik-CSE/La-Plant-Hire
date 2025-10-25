@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import { hireTermsConditions } from "@/data/equipmentData";
 import type { HireTermCondition } from "@/types/equipmentTypes";
 

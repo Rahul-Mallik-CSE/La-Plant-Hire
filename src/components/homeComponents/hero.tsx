@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <div className="max-w-[2000px] mx-auto bg-background2">
-      <div className="relative w-full h-72 sm:h-80 md:h-96 lg:h-[400px] xl:h-[467px] 2xl:h-[560px] overflow-hidden">
+    <div className=" ">
+      <div className="max-w-[2000px] mx-auto relative w-full h-72 sm:h-80 md:h-96 lg:h-[400px] xl:h-[467px] 2xl:h-[560px] overflow-hidden">
         {/* Background Image - Right Side */}
         <Image
           src="/banners/HomeBanner.jpg"

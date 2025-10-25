@@ -2,7 +2,7 @@
 
 import React from "react";
 import EnquiryForm from "../Common/EnquiryForm";
-import HireTermsConditions from "./HireTermsConditions";
+import HireTermsConditions from "./SubComponents/HireTermsConditions";
 
 const TermsAndForm = () => {
   return (

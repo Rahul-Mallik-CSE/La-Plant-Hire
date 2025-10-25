@@ -1,6 +1,7 @@
 /** @format */
 
 import CommonHero from "@/components/Common/CommonHero";
+import RegisterForm from "@/components/Materials/RegisterForm";
 import React from "react";
 
 const ContactPage = () => {
@@ -13,6 +14,9 @@ const ContactPage = () => {
         bgColor="bg-[#121221]"
         textColor="text-white"
       />
+
+      {/* registration form */}
+      <RegisterForm />
     </div>
   );
 };

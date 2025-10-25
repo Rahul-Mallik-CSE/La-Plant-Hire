@@ -9,8 +9,8 @@ import Image from "next/image";
 
 export default function Services() {
   return (
-    <section className="max-w-[2000px] mx-auto py-6 md:py-8 lg:py-12 xl:py-16 ">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
+    <section className=" py-6 md:py-8 lg:py-12 xl:py-16 ">
+      <div className="max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
         {/* Header */}
         <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-12 text-center sm:text-left">
           <p className="text-primary/80 text-xs md:text-base lg:text-xl font-medium sm:font-bold uppercase tracking-wide mb-1 md:mb-2">

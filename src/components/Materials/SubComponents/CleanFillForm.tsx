@@ -15,6 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Calculator } from "lucide-react";
+import CalculatorModal from "./CalculatorModal";
 
 export default function CleanFillForm() {
   const [formData, setFormData] = useState({
@@ -28,6 +29,7 @@ export default function CleanFillForm() {
     truckAccess: "",
     comments: "",
   });
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -112,6 +114,7 @@ export default function CleanFillForm() {
           />
           <Button
             type="button"
+            onClick={() => setIsModalOpen(true)}
             className="bg-foreground lg:h-11 hover:bg-primary text-white font-bold"
           >
             <Calculator className="w-3 h-3 mr-0" />
@@ -165,6 +168,9 @@ export default function CleanFillForm() {
           </Button>
         </div>
       </form>
+
+      {/* Calculator Modal */}
+      <CalculatorModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </div>
   );
 }

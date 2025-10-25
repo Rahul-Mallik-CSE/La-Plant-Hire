@@ -1,6 +1,8 @@
 /** @format */
 
 import CommonHero from "@/components/Common/CommonHero";
+
+import AboutAndForm from "@/components/MaterialsComponents.tsx/AboutAndForm";
 import React from "react";
 
 const MaterialPage = () => {
@@ -13,6 +15,9 @@ const MaterialPage = () => {
         bgColor="bg-[#1E1614]"
         textColor="text-white"
       />
+
+      {/* about and form section */}
+      <AboutAndForm />
     </div>
   );
 };

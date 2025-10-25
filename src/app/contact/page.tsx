@@ -1,8 +1,8 @@
 /** @format */
 
 import CommonHero from "@/components/Common/CommonHero";
-import FindUs from "@/components/Materials/FindUs";
-import RegisterForm from "@/components/Materials/RegisterForm";
+import FindUs from "@/components/ContactComponents/FindUs";
+import RegisterForm from "@/components/ContactComponents/RegisterForm";
 import React from "react";
 
 const ContactPage = () => {

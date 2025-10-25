@@ -66,46 +66,61 @@ export default function CalculatorModal({
           <div className="grid grid-cols-3 gap-1 sm:gap-2">
             <div>
               <label className="text-xs sm:text-sm font-medium text-primary mb-2 block">
-                Length
+                Length (m)
               </label>
+
               <Input
                 type="number"
+                min="0"
                 value={dimensions.length}
                 onChange={(e) =>
-                  setDimensions((prev) => ({ ...prev, length: e.target.value }))
+                  setDimensions((prev) => ({
+                    ...prev,
+                    length: e.target.value,
+                  }))
                 }
-                className="w-full border-2 border-primary focus-visible:ring-0 text-center"
-                placeholder="2m"
+                className="w-full border-2 border-primary focus-visible:ring-0 text-center pr-6"
+                placeholder="2"
               />
             </div>
 
             <div>
               <label className="text-xs sm:text-sm font-medium text-primary mb-2 block">
-                Width
+                Width (m)
               </label>
+
               <Input
                 type="number"
+                min="0"
                 value={dimensions.width}
                 onChange={(e) =>
-                  setDimensions((prev) => ({ ...prev, width: e.target.value }))
+                  setDimensions((prev) => ({
+                    ...prev,
+                    width: e.target.value,
+                  }))
                 }
-                className="w-full border-2 border-primary focus-visible:ring-0 text-center"
-                placeholder="2m"
+                className="w-full border-2 border-primary focus-visible:ring-0 text-center pr-6"
+                placeholder="2"
               />
             </div>
 
             <div>
               <label className="text-xs sm:text-sm font-medium text-primary mb-2 block">
-                Height
+                Height (m)
               </label>
+
               <Input
                 type="number"
+                min="0"
                 value={dimensions.height}
                 onChange={(e) =>
-                  setDimensions((prev) => ({ ...prev, height: e.target.value }))
+                  setDimensions((prev) => ({
+                    ...prev,
+                    height: e.target.value,
+                  }))
                 }
-                className="w-full  border-2 border-primary focus-visible:ring-0 text-center"
-                placeholder="2m"
+                className="w-full  border-2 border-primary focus-visible:ring-0 text-center pr-6"
+                placeholder="2"
               />
             </div>
           </div>

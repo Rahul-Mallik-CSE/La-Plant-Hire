@@ -29,7 +29,7 @@ const MaterialCard = ({ material }: MaterialCardProps) => {
         </h3>
 
         {/* Description */}
-        <p className="text-sm text-primary/80 mb-4 leading-relaxed">
+        <p className="text-xs sm:text-sm text-primary mb-2 leading-relaxed">
           {material.description}
         </p>
 
@@ -37,10 +37,12 @@ const MaterialCard = ({ material }: MaterialCardProps) => {
         {material.bulletPoints && (
           <div>
             {material.bulletPoints.length > 0 && (
-              <ul className="space-y-2">
+              <ul className="space-y-1">
                 {material.bulletPoints.map((point, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="text-primary mr-2 mt-1 text-sm">•</span>
+                  <li key={index} className="flex items-start font-bold">
+                    <span className="text-primary mr-1 text-xs md:text-sm">
+                      •
+                    </span>
                     <span className="text-xs md:text-sm text-primary/70">
                       {point}
                     </span>

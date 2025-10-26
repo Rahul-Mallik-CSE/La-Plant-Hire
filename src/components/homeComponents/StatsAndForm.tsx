@@ -1,7 +1,7 @@
 /** @format */
 
 import Stats from "./SubComponents/Stats";
-import EnquiryForm from "@/components/Common/EnquiryForm";
+import EnquiryForm from "@/components/CommonComponents/EnquiryForm";
 
 export default function StatsAndForm() {
   return (

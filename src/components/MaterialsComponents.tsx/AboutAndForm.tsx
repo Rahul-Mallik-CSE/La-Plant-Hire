@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import EnquiryForm from "../Common/EnquiryForm";
+import EnquiryForm from "../CommonComponents/EnquiryForm";
 import SoilAbout from "./SubComponents/SoilAbout";
 
 const AboutAndForm = () => {

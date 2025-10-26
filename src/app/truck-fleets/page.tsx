@@ -1,7 +1,7 @@
 /** @format */
 
 import CTAsection from "@/components/TruckFleetsComponents/CTASection";
-import CommonHero from "@/components/Common/CommonHero";
+import CommonHero from "@/components/CommonComponents/CommonHero";
 import TruckFleetsServices from "@/components/TruckFleetsComponents/TruckFleetsServices";
 
 import React from "react";

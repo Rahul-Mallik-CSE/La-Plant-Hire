@@ -2,7 +2,7 @@
 
 import { vehicles } from "@/data/homeData";
 import type { Vehicle } from "@/types/AllHomeTypes";
-import VehicleCard from "../Common/VehicleCard";
+import VehicleCard from "../CommonComponents/VehicleCard";
 
 export default function FeaturedFleet() {
   return (

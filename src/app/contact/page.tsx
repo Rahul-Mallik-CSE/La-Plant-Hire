@@ -1,6 +1,6 @@
 /** @format */
 
-import CommonHero from "@/components/Common/CommonHero";
+import CommonHero from "@/components/CommonComponents/CommonHero";
 import FindUs from "@/components/ContactComponents/FindUs";
 import RegisterForm from "@/components/ContactComponents/RegisterForm";
 import React from "react";

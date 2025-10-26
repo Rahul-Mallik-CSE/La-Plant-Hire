@@ -1,6 +1,6 @@
 /** @format */
 
-import CommonHero from "@/components/Common/CommonHero";
+import CommonHero from "@/components/CommonComponents/CommonHero";
 
 import AboutAndForm from "@/components/MaterialsComponents.tsx/AboutAndForm";
 import React from "react";

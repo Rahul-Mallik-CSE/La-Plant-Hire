@@ -7,7 +7,7 @@ import { soilsData } from "@/data/materialData";
 const SoilSection = () => {
   return (
     <section className="py-6 md:py-8 lg:py-12 xl:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
         {/* Section Title */}
         <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold text-primary text-center mb-8 md:mb-12">
           Our Soils

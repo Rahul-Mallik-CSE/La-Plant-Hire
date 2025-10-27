@@ -11,7 +11,7 @@ interface MaterialCardProps {
 const MaterialCard = ({ material }: MaterialCardProps) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-      {/* Image */}
+      {/* Image with Overlayed Title */}
       <div className="relative h-48 md:h-56 w-full">
         <Image
           src={material.image}
@@ -19,15 +19,16 @@ const MaterialCard = ({ material }: MaterialCardProps) => {
           fill
           className="object-cover"
         />
+        {/* Title Overlay with Blur */}
+        <div className="absolute bottom-0 left-0 right-0  backdrop-blur-sm bg-transparent  py-3 px-4">
+          <h3 className="text-base md:text-lg font-bold text-white text-center">
+            {material.title}
+          </h3>
+        </div>
       </div>
 
       {/* Content */}
       <div className="p-4 md:p-6">
-        {/* Title */}
-        <h3 className="text-lg md:text-xl font-bold text-white bg-primary text-center py-2 mb-4">
-          {material.title}
-        </h3>
-
         {/* Description */}
         <p className="text-xs sm:text-sm text-primary mb-2 leading-relaxed">
           {material.description}

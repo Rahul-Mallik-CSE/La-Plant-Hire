@@ -30,9 +30,14 @@ const MaterialCard = ({ material }: MaterialCardProps) => {
       {/* Content */}
       <div className="py-4 md:py-6">
         {/* Description */}
-        <p className="text-xs sm:text-sm text-primary mb-2 leading-relaxed">
-          {material.description}
-        </p>
+        <div className="text-xs sm:text-sm text-primary mb-2 leading-relaxed space-y-1">
+          {material.description
+            .split(".")
+            .filter((line) => line.trim())
+            .map((line, index) => (
+              <p key={index}>{line.trim()}.</p>
+            ))}
+        </div>
 
         {/* Bullet Points */}
         {material.bulletPoints && (

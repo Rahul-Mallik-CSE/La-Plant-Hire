@@ -10,7 +10,7 @@ interface MaterialCardProps {
 
 const MaterialCard = ({ material }: MaterialCardProps) => {
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <div className="bg-white  overflow-hidden ">
       {/* Image with Overlayed Title */}
       <div className="relative h-48 md:h-56 w-full">
         <Image
@@ -28,7 +28,7 @@ const MaterialCard = ({ material }: MaterialCardProps) => {
       </div>
 
       {/* Content */}
-      <div className="p-4 md:p-6">
+      <div className="py-4 md:py-6">
         {/* Description */}
         <p className="text-xs sm:text-sm text-primary mb-2 leading-relaxed">
           {material.description}

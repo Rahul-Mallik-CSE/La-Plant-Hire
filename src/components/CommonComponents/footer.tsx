@@ -32,23 +32,26 @@ export default function Footer() {
             <h4 className="font-bold mb-2 text-sm">Services</h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#" className="hover:underline transition ">
+                <Link
+                  href="/truck-fleets"
+                  className="hover:underline transition "
+                >
                   Truck Hire
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline transition">
+                <Link href="/equipment" className="hover:underline transition">
+                  Equipment Hire
+                </Link>
+              </li>
+              <li>
+                <Link href="/materials" className="hover:underline transition">
                   Soil Removal
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline transition">
+                <Link href="/materials" className="hover:underline transition">
                   Material Delivery
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:underline transition">
-                  Equipment Hire
                 </Link>
               </li>
             </ul>
@@ -59,13 +62,13 @@ export default function Footer() {
             <h4 className="font-bold mb-2">Company</h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#" className="hover:underline transition">
+                <Link href="/" className="hover:underline transition">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline transition">
-                  Our Fleet
+                <Link href="/contact" className="hover:underline transition">
+                  Contact Us
                 </Link>
               </li>
             </ul>

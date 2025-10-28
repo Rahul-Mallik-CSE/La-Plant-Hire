@@ -8,7 +8,7 @@ export const trucks = [
     image: "/products/truckFleets/heavy-duty-tripper.jpg",
   },
   {
-    title: "TWIN STEER",
+    title: "TWIN STEER - 10 WHEELER",
     description: "10 Wheeler. For your bigger jobs with limited access.",
     price: "$240/hr",
     image: "/products/truckFleets/twin-steer.png",
@@ -23,6 +23,6 @@ export const trucks = [
     title: "Truck and Trailer",
     description: "Alloy PBS Truck and Quad Trailer with high sides",
     price: "$200/hr",
-    image: "/products/truckFleets/truck-and-trailer.png",
+    image: "/products/truckFleets/TRUCK-AND-TRI-AXLE-DOG-TRAILER.jpg",
   },
 ];

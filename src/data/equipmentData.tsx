@@ -39,7 +39,7 @@ export const equipment = [
   },
   {
     id: 2,
-    name: "Excavators (250mm+)",
+    name: "25tonne Excavator",
     image: "/products/equipment/excavators-250mm.png",
     description: "Ideal for",
     features: [

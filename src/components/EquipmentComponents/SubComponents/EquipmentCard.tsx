@@ -84,10 +84,10 @@ export default function EquipmentCard({
 
           {/* Price and CTA */}
           {!isExpanding ? (
-            <div className="flex items-center justify-between">
-              <span className="text-base sm:text-lg lg:text-xl font-bold text-custom-orange">
+            <div className="flex w-full items-center justify-end">
+              {/* <span className="text-base sm:text-lg lg:text-xl font-bold text-custom-orange">
                 {price}
-              </span>
+              </span> */}
               <Button className="border-1 md:border-2 border-primary text-primary px-2 md:px-4 py-2 h-6 sm:h-7 md:h-8 rounded text-xs  font-bold bg-transparent hover:bg-gray-100  transition">
                 ENQUIRE NOW
               </Button>

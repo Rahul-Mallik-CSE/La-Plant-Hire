@@ -22,10 +22,10 @@ const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
         <p className="text-primary text-xs sm:text-sm mb-3 sm:mb-4">
           {vehicle.description}
         </p>
-        <div className="flex items-center justify-between">
-          <span className="text-base sm:text-lg font-bold text-primary">
+        <div className="flex w-full items-center justify-end">
+          {/* <span className="text-base sm:text-lg font-bold text-primary">
             {vehicle.price}
-          </span>
+          </span> */}
           <Button
             variant="outline"
             className="px-2 sm:px-3 h-7 sm:h-9 border-primary text-primary hover:text-primary hover:bg-primary/5 text-xs sm:text-sm font-medium sm:font-bold bg-transparent border sm:border-2 rounded-sm"

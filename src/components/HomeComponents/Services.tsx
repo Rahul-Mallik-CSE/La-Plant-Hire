@@ -24,6 +24,21 @@ export default function Services() {
               Queensland.
             </span>
           </h2>
+          <p className="text-primary text-xs md:text-sm lg:text-base leading-relaxed   mx-auto sm:mx-0">
+            We provide a specialised network of tip trucks for civil and quarry
+            work. We have a new fleet of more than 10 diverse combinations of
+            trucks and trailers to suit all jobs. With an experienced team of
+            drivers operating a new fleet under mass and maintenance management.
+            We have many fully qualified Rail Industry workers and all of our
+            drivers are inducted into major quarry and civil sites. Please call
+            or submit an enquiry if you are interested in hiring our trucks and
+            drivers for your next project.
+          </p>
+          <p className="text-primary text-xs md:text-sm lg:text-base leading-relaxed   mx-auto sm:mx-0">
+            We also offer dry hire of a range of excavation equipment. Check out
+            the machines available and call or submit an enquiry if you are
+            interested in hiring the machines.
+          </p>
         </div>
 
         {/* Service Cards */}

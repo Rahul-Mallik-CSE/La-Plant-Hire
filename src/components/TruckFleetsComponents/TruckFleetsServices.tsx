@@ -8,7 +8,7 @@ import VehicleCard from "../CommonComponents/VehicleCard";
 const TruckFleetsServices = () => {
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const filters = ["All", "Body trucks", "Twin steers", "Excavators"];
+  const filters = ["All", "Body trucks", "Twin steers", "Machinery"];
   return (
     <div className="py-6 md:py-8 lg:py-12 xl:py-16 mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
       <section className="max-w-7xl mx-auto px-4 pb-6 sm:pb-8 md:pb-12 ">

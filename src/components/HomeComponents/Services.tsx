@@ -63,9 +63,9 @@ export default function Services() {
                 <p className="text-primary text-sm sm:text-base ">
                   {service.description}
                 </p>
-                <p className="text-foreground font-medium text-sm sm:text-base">
+                {/* <p className="text-foreground font-medium text-sm sm:text-base">
                   {service.price}
-                </p>
+                </p> */}
                 <Link
                   href="#"
                   className="text-blue-500 hover:text-blue-700 mt-2 text-xs flex items-center gap-1"

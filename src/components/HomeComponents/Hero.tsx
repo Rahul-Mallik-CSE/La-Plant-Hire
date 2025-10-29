@@ -21,6 +21,18 @@ export default function HeroSection() {
         {/* Content Container */}
         <div className="relative h-full flex items-center">
           <div className="w-full sm:w-1/2 px-4 sm:px-6 lg:px-8 xl:px-16 flex flex-col justify-center">
+            <div className="flex items-center gap-2 md:gap-3 lg:gap-4 ">
+              <Image
+                src="/logo/plant-logo.png"
+                alt="LA Plant Hire Logo"
+                width={66}
+                height={66}
+                className="object-contain"
+              />
+              <h1 className="text-lg sm:text-xl md:text-4xl  lg:text-5xl  text-primary font-black leading-tight mb-2  lg:mb-3">
+                LA PLANT HIRE
+              </h1>
+            </div>
             {/* Heading */}
             <h1 className="text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl max-w-xl text-primary font-black leading-tight mb-2 md:mb-4 lg:mb-6">
               FAMILY-OWNED

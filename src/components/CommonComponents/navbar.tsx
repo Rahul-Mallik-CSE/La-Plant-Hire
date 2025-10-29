@@ -15,12 +15,12 @@ export default function Navbar() {
             <Image
               src="/logo/plant-logo.png"
               alt="LA Plant Hire Logo"
-              width={48}
-              height={48}
+              width={40}
+              height={40}
               className="object-contain"
             />
           </Link>
-          <span className="hidden lg:flex font-bold text-xl lg:text-3xl text-primary">
+          <span className="hidden lg:flex font-bold text-xl lg:text-2xl text-primary">
             LA PLANT HIRE
           </span>
         </div>

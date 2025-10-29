@@ -67,7 +67,10 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:underline transition">
+                <Link
+                  href="/soil-register"
+                  className="hover:underline transition"
+                >
                   Contact Us
                 </Link>
               </li>

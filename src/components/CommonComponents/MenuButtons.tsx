@@ -53,12 +53,12 @@ export default function MenuButtons() {
           Materials
         </Link>
         <Link
-          href="/contact"
+          href="/soil-register"
           className={`text-white text-sm font-medium px-1 lg:px-3 py-1 rounded-xs transition ${
             pathname === "/contact" ? "bg-gray-600" : "hover:bg-gray-700"
           }`}
         >
-          Contact
+          Soild Register
         </Link>
       </nav>
 
@@ -134,8 +134,8 @@ export default function MenuButtons() {
                   : "focus:bg-gray-200 focus:text-black"
               }`}
             >
-              <Link href="/contact" className="w-full">
-                Contact
+              <Link href="/soil-register" className="w-full">
+                Soild Register
               </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>

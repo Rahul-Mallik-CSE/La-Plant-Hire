@@ -27,9 +27,9 @@ export default function HeroSection() {
                 alt="LA Plant Hire Logo"
                 width={66}
                 height={66}
-                className="object-contain"
+                className="object-contain w-8 mb-1 h-8 md:w-[50px] md:h-[50px] lg:w-[66px] lg:h-[66px]"
               />
-              <h1 className="text-lg sm:text-xl md:text-4xl  lg:text-5xl  text-primary font-black leading-tight mb-2  lg:mb-3">
+              <h1 className="text-lg sm:text-xl md:text-3xl  lg:text-4xl xl:text-5xl 2xl:text-6xl  text-primary font-black leading-tight mb-2  lg:mb-3">
                 LA PLANT HIRE
               </h1>
             </div>

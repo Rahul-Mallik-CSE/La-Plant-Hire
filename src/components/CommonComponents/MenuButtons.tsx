@@ -31,7 +31,7 @@ export default function MenuButtons() {
         <Link
           href="/truck-fleet"
           className={`text-white text-sm font-medium px-1 lg:px-3 py-1 rounded-xs transition ${
-            pathname === "/truck-fleets" ? "bg-gray-600" : "hover:bg-gray-700"
+            pathname === "/truck-fleet" ? "bg-gray-600" : "hover:bg-gray-700"
           }`}
         >
           Truck Fleet
@@ -55,7 +55,7 @@ export default function MenuButtons() {
         <Link
           href="/soil-register"
           className={`text-white text-sm font-medium px-1 lg:px-3 py-1 rounded-xs transition ${
-            pathname === "/contact" ? "bg-gray-600" : "hover:bg-gray-700"
+            pathname === "/soil-register" ? "bg-gray-600" : "hover:bg-gray-700"
           }`}
         >
           Soild Register
@@ -93,7 +93,7 @@ export default function MenuButtons() {
             <DropdownMenuItem
               asChild
               className={`py-1 ${
-                pathname === "/truck-fleets"
+                pathname === "/truck-fleet"
                   ? "bg-primary focus:bg-black text-white"
                   : "focus:bg-gray-200 focus:text-black"
               }`}
@@ -129,7 +129,7 @@ export default function MenuButtons() {
             <DropdownMenuItem
               asChild
               className={`py-1 ${
-                pathname === "/contact"
+                pathname === "/soil-register"
                   ? "bg-primary focus:bg-black text-white"
                   : "focus:bg-gray-200 focus:text-black"
               }`}

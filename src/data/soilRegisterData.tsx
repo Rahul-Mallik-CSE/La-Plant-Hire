@@ -1,6 +1,6 @@
 /** @format */
 
-import { ContactInfoItem } from "@/types/contactTypes";
+import { ContactInfoItem } from "@/types/soilRegisterTypes";
 import { PiBuildingsFill, PiMapPinFill } from "react-icons/pi";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";

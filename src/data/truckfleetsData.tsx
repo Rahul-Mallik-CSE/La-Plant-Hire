@@ -14,11 +14,11 @@ export const trucks = [
   {
     title: "TRUCK AND TRI AXLE DOG TRAILER",
     description: "Steel Truck and Tri Axle Dog Trailer",
-    image: "/products/truckFleets/TRUCK-AND-TRI-AXLE-DOG-TRAILER.jpg",
+    image: "/products/truckFleets/TRUCK-AND-TRI-AXLE-DOG-TRAILER.jpeg",
   },
   {
     title: "TRUCK AND TRAILER",
     description: "Alloy PBS Truck and Quad Trailer with high sides",
-    image: "/products/truckFleets/TRUCK-AND-TRI-AXLE-DOG-TRAILER.jpg",
+    image: "/products/truckFleets/truck-and-trailer.jpg",
   },
 ];

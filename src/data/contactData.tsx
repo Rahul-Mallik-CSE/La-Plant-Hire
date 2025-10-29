@@ -15,7 +15,7 @@ export const contactInfoData: ContactInfoItem[] = [
   {
     icon: PiMapPinFill,
     label: "Address",
-    details: ["292 Wynne Road", "Holmview QLD 4207"],
+    details: ["292-300 Wuraga Road", "Holmview"],
   },
   {
     icon: FaPhoneAlt,

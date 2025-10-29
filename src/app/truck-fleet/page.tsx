@@ -1,10 +1,10 @@
 /** @format */
 
-import CTAsection from "@/components/TruckFleetsComponents/CTASection";
+import CTAsection from "@/components/TruckFleetComponents/CTASection";
 import CommonHero from "@/components/CommonComponents/CommonHero";
-import TruckFleetsServices from "@/components/TruckFleetsComponents/TruckFleetsServices";
 
 import React from "react";
+import TruckFleetServices from "@/components/TruckFleetComponents/TruckFleetServices";
 
 const TruckFleetsPage = () => {
   return (
@@ -17,7 +17,7 @@ const TruckFleetsPage = () => {
       />
 
       {/* TruckFleetsServices section */}
-      <TruckFleetsServices />
+      <TruckFleetServices />
 
       {/* CTA Section */}
       <CTAsection />

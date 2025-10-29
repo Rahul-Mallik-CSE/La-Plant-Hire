@@ -33,7 +33,7 @@ export default function Footer() {
             <ul className="space-y-2 text-xs">
               <li>
                 <Link
-                  href="/truck-fleets"
+                  href="/truck-fleet"
                   className="hover:underline transition "
                 >
                   Truck Hire

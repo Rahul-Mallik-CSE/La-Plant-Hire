@@ -29,12 +29,12 @@ export default function MenuButtons() {
           Home
         </Link>
         <Link
-          href="/truck-fleets"
+          href="/truck-fleet"
           className={`text-white text-sm font-medium px-1 lg:px-3 py-1 rounded-xs transition ${
             pathname === "/truck-fleets" ? "bg-gray-600" : "hover:bg-gray-700"
           }`}
         >
-          Truck Fleets
+          Truck Fleet
         </Link>
         <Link
           href="/equipment"
@@ -98,8 +98,8 @@ export default function MenuButtons() {
                   : "focus:bg-gray-200 focus:text-black"
               }`}
             >
-              <Link href="/truck-fleets" className="w-full ">
-                Truck Fleets
+              <Link href="/truck-fleet" className="w-full ">
+                Truck Fleet
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem

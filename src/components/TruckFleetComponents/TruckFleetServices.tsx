@@ -2,10 +2,10 @@
 "use client";
 import React, { useState } from "react";
 
-import { trucks } from "@/data/truckfleetsData";
+import { trucks } from "@/data/truckfleetData";
 import VehicleCard from "../CommonComponents/VehicleCard";
 
-const TruckFleetsServices = () => {
+const TruckFleetServices = () => {
   const [activeFilter, setActiveFilter] = useState("All");
 
   const filters = ["All", "Body trucks", "Twin steers", "Machinery"];
@@ -41,4 +41,4 @@ const TruckFleetsServices = () => {
   );
 };
 
-export default TruckFleetsServices;
+export default TruckFleetServices;

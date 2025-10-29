@@ -15,7 +15,6 @@ export default function EquipmentCard({
   description,
   features,
   specs,
-  price,
   isExpanding,
 }: EquipmentCardProps) {
   return (

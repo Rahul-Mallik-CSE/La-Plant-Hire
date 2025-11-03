@@ -19,10 +19,10 @@ export default function MenuButtons() {
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="hidden sm:flex items-center gap-1 bg-primary rounded-lg px-2  py-1">
+      <nav className="hidden sm:flex items-center gap-0.5 md:gap-1 bg-primary rounded-lg px-2  py-1">
         <Link
           href="/"
-          className={`text-white text-sm font-medium px-1 lg:px-3 py-1 rounded-xs transition ${
+          className={`text-white text-xs md:text-sm font-medium px-1 lg:px-3 py-1 rounded-xs transition ${
             pathname === "/" ? "bg-gray-600" : "hover:bg-gray-700"
           }`}
         >
@@ -30,7 +30,7 @@ export default function MenuButtons() {
         </Link>
         <Link
           href="/truck-fleet"
-          className={`text-white text-sm font-medium px-1 lg:px-3 py-1 rounded-xs transition ${
+          className={`text-white text-xs md:text-sm font-medium px-1 lg:px-3 py-1 rounded-xs transition ${
             pathname === "/truck-fleet" ? "bg-gray-600" : "hover:bg-gray-700"
           }`}
         >
@@ -38,7 +38,7 @@ export default function MenuButtons() {
         </Link>
         <Link
           href="/equipment"
-          className={`text-white text-sm font-medium px-1 lg:px-3 py-1 rounded-xs transition ${
+          className={`text-white text-xs md:text-sm font-medium px-1 lg:px-3 py-1 rounded-xs transition ${
             pathname === "/equipment" ? "bg-gray-600" : "hover:bg-gray-700"
           }`}
         >
@@ -46,7 +46,7 @@ export default function MenuButtons() {
         </Link>
         <Link
           href="/materials"
-          className={`text-white text-sm font-medium px-1 lg:px-3 py-1 rounded-xs transition ${
+          className={`text-white text-xs md:text-sm font-medium px-1 lg:px-3 py-1 rounded-xs transition ${
             pathname === "/materials" ? "bg-gray-600" : "hover:bg-gray-700"
           }`}
         >
@@ -54,7 +54,7 @@ export default function MenuButtons() {
         </Link>
         <Link
           href="/soil-register"
-          className={`text-white text-sm font-medium px-1 lg:px-3 py-1 rounded-xs transition ${
+          className={`text-white text-xs lg:text-sm font-medium px-1 lg:px-3 py-1 rounded-xs transition ${
             pathname === "/soil-register" ? "bg-gray-600" : "hover:bg-gray-700"
           }`}
         >

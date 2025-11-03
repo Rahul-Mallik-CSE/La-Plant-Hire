@@ -17,7 +17,7 @@ export default function Navbar() {
               alt="LA Plant Hire Logo"
               width={40}
               height={40}
-              className="object-contain"
+              className="object-contain w-6 h-6 md:w-10 md:h-10"
             />
           </Link>
           <span className="hidden lg:flex font-bold text-lg xl:text-2xl text-primary">

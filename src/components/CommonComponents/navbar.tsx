@@ -30,7 +30,7 @@ export default function Navbar() {
 
         {/* CTA Button - Hidden on mobile */}
         <div className="flex gap-2 md:gap-3 xl:gap-4 justify-center items-center">
-          <p className="text-xs md:text-sm">
+          <p className="text-xs md:text-sm lg:text-base">
             Call: <span className="font-bold">1300 52 34 78</span>
           </p>
           <Button className="text-xs md:text-sm h-7 sm:h-8 px-2 md:px-4 bg-custom-orange rounded-sm hover:bg-custom-orange/80 border-2 border-orange-700 text-primary font-bold">

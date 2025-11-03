@@ -20,7 +20,7 @@ export default function Navbar() {
               className="object-contain"
             />
           </Link>
-          <span className="hidden lg:flex font-bold text-xl lg:text-2xl text-primary">
+          <span className="hidden lg:flex font-bold text-lg xl:text-2xl text-primary">
             LA PLANT HIRE
           </span>
         </div>
@@ -29,9 +29,14 @@ export default function Navbar() {
         <MenuButtons />
 
         {/* CTA Button - Hidden on mobile */}
-        <Button className="text-xs md:text-sm h-7 sm:h-8 px-2 md:px-4 bg-custom-orange rounded-sm hover:bg-custom-orange/80 border-2 border-orange-700 text-primary font-bold">
-          GET A QUOTE
-        </Button>
+        <div className="flex gap-2 md:gap-3 xl:gap-4 justify-center items-center">
+          <p className="text-xs md:text-sm">
+            Call: <span className="font-bold">1300 52 34 78</span>
+          </p>
+          <Button className="text-xs md:text-sm h-7 sm:h-8 px-2 md:px-4 bg-custom-orange rounded-sm hover:bg-custom-orange/80 border-2 border-orange-700 text-primary font-bold">
+            GET A QUOTE
+          </Button>
+        </div>
       </div>
     </header>
   );

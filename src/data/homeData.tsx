@@ -7,21 +7,25 @@ const services: Service[] = [
     icon: "/logo/truck-logo2.png",
     title: "Truck Hire",
     description: "Reliable trucks for all your transportation needs",
+    path: "/truck-fleet",
   },
   {
     icon: "/logo/soil-material-logo.png",
     title: "Soil Register",
     description: "Register your interest to receive excess material",
+    path: "/soil-register",
   },
   {
     icon: "/logo/material-delivery-logo.png",
     title: "Material Delivery",
     description: "Timely delivery of construction materials",
+    path: "/materials",
   },
   {
     icon: "/logo/equipment-hire-logo.png",
     title: "Equipment Hire",
     description: "Professional grade construction equipment",
+    path: "/equipment",
   },
 ];
 export { services };

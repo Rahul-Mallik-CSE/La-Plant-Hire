@@ -50,9 +50,15 @@ export default function Services() {
                   <Image
                     src={service.icon}
                     alt={service.title}
-                    width={20}
-                    height={30}
-                    className="rounded-full "
+                    width={24}
+                    height={24}
+                    className="rounded-full object-contain"
+                    style={{
+                      width: "auto",
+                      height: "auto",
+                      maxWidth: "24px",
+                      maxHeight: "24px",
+                    }}
                   />
                 </div>
               </div>

@@ -4,6 +4,7 @@ export interface Service {
   icon: string;
   title: string;
   description: string;
+  path: string;
 }
 
 export interface Vehicle {

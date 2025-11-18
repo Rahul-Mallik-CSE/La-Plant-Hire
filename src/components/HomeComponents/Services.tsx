@@ -73,7 +73,7 @@ export default function Services() {
                   {service.price}
                 </p> */}
                 <Link
-                  href="#"
+                  href={service.path}
                   className="text-blue-500 hover:text-blue-700 mt-2 text-xs flex items-center gap-1"
                 >
                   View details <ArrowRight size={16} />

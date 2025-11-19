@@ -1,9 +1,22 @@
 /** @format */
 
+"use client";
+
+import { useRef } from "react";
 import Stats from "./SubComponents/Stats";
 import EnquiryForm from "@/components/CommonComponents/EnquiryForm";
 
-export default function StatsAndForm() {
+interface StatsAndFormProps {
+  selectedService?: string;
+  services?: string[];
+}
+
+export default function StatsAndForm({
+  selectedService,
+  services,
+}: StatsAndFormProps) {
+  const formRef = useRef<HTMLDivElement>(null);
+
   return (
     <section className="p-6 md:p-8 lg:p-12 xl:p-16 bg-background2">
       <div className="max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
@@ -12,7 +25,11 @@ export default function StatsAndForm() {
           <Stats />
 
           {/* Right Column - Form */}
-          <EnquiryForm />
+          <EnquiryForm
+            ref={formRef}
+            selectedService={selectedService}
+            services={services}
+          />
         </div>
       </div>
     </section>

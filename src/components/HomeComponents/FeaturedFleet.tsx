@@ -5,7 +5,11 @@
 import { useGetFeaturedFleetQuery } from "@/redux/features/featuredFleetApi";
 import VehicleCard from "../CommonComponents/VehicleCard";
 
-export default function FeaturedFleet() {
+interface FeaturedFleetProps {
+  onEnquiryClick?: (serviceName: string) => void;
+}
+
+export default function FeaturedFleet({ onEnquiryClick }: FeaturedFleetProps) {
   const { data, isLoading, isError } = useGetFeaturedFleetQuery();
 
   if (isLoading) {
@@ -56,7 +60,11 @@ export default function FeaturedFleet() {
         {/* Vehicle Cards */}
         <div className="flex flex-col md:flex-row  flex-wrap gap-4 xl:gap-12 2xl:gap-32 w-full items-center justify-center ">
           {data.data.map((item) => (
-            <VehicleCard key={item.id} vehicle={item} />
+            <VehicleCard
+              key={item.id}
+              vehicle={item}
+              onEnquiryClick={onEnquiryClick}
+            />
           ))}
         </div>
       </div>

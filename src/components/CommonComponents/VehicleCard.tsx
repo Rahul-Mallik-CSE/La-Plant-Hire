@@ -8,14 +8,23 @@ import { getFullImageFullUrl } from "@/lib/utils";
 
 interface VehicleCardProps {
   vehicle: FeaturedFleetItem;
+  onEnquiryClick?: (serviceName: string) => void;
 }
 
-const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
-  console.log(vehicle);
+const VehicleCard: React.FC<VehicleCardProps> = ({
+  vehicle,
+  onEnquiryClick,
+}) => {
   const description =
     vehicle.ideal_for.length > 0
       ? vehicle.ideal_for[0].name
       : vehicle.category.description;
+
+  const handleEnquiryClick = () => {
+    if (onEnquiryClick) {
+      onEnquiryClick(vehicle.name);
+    }
+  };
 
   return (
     <div className="max-w-96 min-w-80 overflow-hidden">
@@ -39,6 +48,7 @@ const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
         <div className="flex w-full items-center justify-end">
           <Button
             variant="outline"
+            onClick={handleEnquiryClick}
             className="px-2 sm:px-3 h-7 sm:h-9 border-primary text-primary hover:text-primary hover:bg-primary/5 text-xs sm:text-sm font-medium sm:font-bold bg-transparent border sm:border-2 rounded-sm"
           >
             ENQUIRE NOW

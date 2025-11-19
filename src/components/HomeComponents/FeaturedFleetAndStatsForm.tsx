@@ -19,6 +19,11 @@ const FeaturedFleetAndStatsForm = () => {
     return uniqueServices;
   }, [data]);
 
+  const servicesData = useMemo(() => {
+    if (!data?.data) return [];
+    return data.data;
+  }, [data]);
+
   const handleEnquiryClick = (serviceName: string) => {
     setSelectedService(serviceName);
     // Scroll to form section
@@ -37,7 +42,11 @@ const FeaturedFleetAndStatsForm = () => {
 
       {/* stats and form section */}
       <div ref={formSectionRef}>
-        <StatsAndForm selectedService={selectedService} services={services} />
+        <StatsAndForm
+          selectedService={selectedService}
+          services={services}
+          servicesData={servicesData}
+        />
       </div>
     </div>
   );

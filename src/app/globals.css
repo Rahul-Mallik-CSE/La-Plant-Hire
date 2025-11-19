@@ -3,6 +3,7 @@
 @import "tailwindcss/theme";
 @import "tailwindcss/utilities";
 @import "tw-animate-css";
+@import "react-toastify/dist/ReactToastify.css";
 
 @custom-variant dark (&:is(.dark *));
 

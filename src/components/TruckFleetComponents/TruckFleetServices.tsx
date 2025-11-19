@@ -3,9 +3,18 @@
 import React, { useState, useMemo } from "react";
 import { useGetTruckFleetQuery } from "@/redux/features/truckFleetApi";
 import VehicleCard from "../CommonComponents/VehicleCard";
+import EnquiryForm from "../CommonComponents/EnquiryForm";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const TruckFleetServices = () => {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
   const { data, isLoading, isError } = useGetTruckFleetQuery();
 
   const filters = ["All", "Body Trucks", "Excavator", "Machinery"];
@@ -16,6 +25,24 @@ const TruckFleetServices = () => {
     if (activeFilter === "All") return data.data;
     return data.data.filter((truck) => truck.category.name === activeFilter);
   }, [data, activeFilter]);
+
+  // Extract unique service names for the form
+  const services = useMemo(() => {
+    if (!data?.data) return [];
+    const uniqueServices = [...new Set(data.data.map((item) => item.name))];
+    return uniqueServices;
+  }, [data]);
+
+  // Pass full services data for ID lookup
+  const servicesData = useMemo(() => {
+    if (!data?.data) return [];
+    return data.data;
+  }, [data]);
+
+  const handleEnquiryClick = (serviceName: string) => {
+    setSelectedService(serviceName);
+    setIsModalOpen(true);
+  };
 
   if (isLoading) {
     return (
@@ -64,11 +91,33 @@ const TruckFleetServices = () => {
         ) : (
           <div className="flex flex-col md:flex-row  flex-wrap  gap-4 sm:gap-8 md:gap-12 xl:gap-16  items-center justify-center">
             {filteredTrucks.map((truck) => (
-              <VehicleCard key={truck.id} vehicle={truck} />
+              <VehicleCard
+                key={truck.id}
+                vehicle={truck}
+                onEnquiryClick={handleEnquiryClick}
+              />
             ))}
           </div>
         )}
       </section>
+
+      {/* Enquiry Modal */}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-w-md sm:max-w-lg">
+          <DialogHeader>
+            <DialogTitle className="text-center text-primary">
+              Service Enquiry
+            </DialogTitle>
+          </DialogHeader>
+          <EnquiryForm
+            selectedService={selectedService}
+            services={services}
+            servicesData={servicesData}
+            showHeaderWithIcon={false}
+            onSuccess={() => setIsModalOpen(false)}
+          />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

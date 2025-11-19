@@ -13,18 +13,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-
+import { useSubmitEnquiryMutation } from "@/redux/features/featuredFleetApi";
+import { toast } from "react-toastify";
 import { PiHandshake } from "react-icons/pi";
+import type { FeaturedFleetItem } from "@/types/AllHomeTypes";
 
 interface EnquiryFormProps {
   showHeaderWithIcon?: boolean;
   selectedService?: string;
   services?: string[];
+  servicesData?: FeaturedFleetItem[];
+  onSuccess?: () => void;
 }
 
 const EnquiryForm = forwardRef<HTMLDivElement, EnquiryFormProps>(
   (
-    { showHeaderWithIcon = false, selectedService = "", services = [] },
+    {
+      showHeaderWithIcon = false,
+      selectedService = "",
+      services = [],
+      servicesData = [],
+      onSuccess,
+    },
     ref
   ) => {
     const [formData, setFormData] = useState({
@@ -35,6 +45,8 @@ const EnquiryForm = forwardRef<HTMLDivElement, EnquiryFormProps>(
       duration: "",
       details: "",
     });
+
+    const [submitEnquiry, { isLoading }] = useSubmitEnquiryMutation();
 
     // Update service when selectedService prop changes
     useEffect(() => {
@@ -52,10 +64,66 @@ const EnquiryForm = forwardRef<HTMLDivElement, EnquiryFormProps>(
       setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
-      console.log("Form submitted:", formData);
-      // Add your form submission logic here
+
+      // Find service ID by service name
+      const serviceItem = servicesData.find(
+        (item: FeaturedFleetItem) => item.name === formData.service
+      );
+
+      if (!serviceItem) {
+        toast.error("Please select a valid service");
+        return;
+      }
+
+      // Parse duration string to get number of days
+      const durationMap: { [key: string]: number } = {
+        "1day": 1,
+        "1week": 7,
+        "1month": 30,
+        custom: 0,
+      };
+
+      const durationDays = durationMap[formData.duration] || 0;
+
+      try {
+        const submitData = {
+          contact_name: formData.name,
+          contact_email: formData.email,
+          contact_phone: formData.phone,
+          project_discription: formData.details,
+          service: serviceItem.id,
+          servie_duration_days: durationDays,
+        };
+
+        const response = await submitEnquiry(submitData).unwrap();
+
+        if (response.success) {
+          toast.success(response.message || "Enquiry submitted successfully!");
+          // Reset form
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            service: "",
+            duration: "",
+            details: "",
+          });
+          // Call onSuccess callback if provided (e.g., to close modal)
+          if (onSuccess) {
+            onSuccess();
+          }
+        } else {
+          toast.error(response.message || "Failed to submit enquiry");
+        }
+      } catch (error) {
+        console.error("Enquiry submission error:", error);
+        const err = error as { data?: { message?: string } };
+        toast.error(
+          err?.data?.message || "Failed to submit enquiry. Please try again."
+        );
+      }
     };
 
     return (
@@ -162,8 +230,12 @@ const EnquiryForm = forwardRef<HTMLDivElement, EnquiryFormProps>(
           />
 
           <div className="w-full flex md:justify-end">
-            <Button className="w-full md:w-32 text-xs sm:text-sm  bg-custom-orange hover:bg-[#e67e00] text-primary font-bold py-2 sm:py-3">
-              SEND ENQUIRY
+            <Button
+              type="submit"
+              disabled={isLoading}
+              className="w-full md:w-32 text-xs sm:text-sm  bg-custom-orange hover:bg-[#e67e00] text-primary font-bold py-2 sm:py-3 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isLoading ? "SENDING..." : "SEND ENQUIRY"}
             </Button>
           </div>
           <div className="w-full flex justify-end">

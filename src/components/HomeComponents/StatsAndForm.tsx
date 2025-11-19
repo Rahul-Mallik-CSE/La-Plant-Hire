@@ -5,15 +5,18 @@
 import { useRef } from "react";
 import Stats from "./SubComponents/Stats";
 import EnquiryForm from "@/components/CommonComponents/EnquiryForm";
+import type { FeaturedFleetItem } from "@/types/AllHomeTypes";
 
 interface StatsAndFormProps {
   selectedService?: string;
   services?: string[];
+  servicesData?: FeaturedFleetItem[];
 }
 
 export default function StatsAndForm({
   selectedService,
   services,
+  servicesData,
 }: StatsAndFormProps) {
   const formRef = useRef<HTMLDivElement>(null);
 
@@ -29,6 +32,7 @@ export default function StatsAndForm({
             ref={formRef}
             selectedService={selectedService}
             services={services}
+            servicesData={servicesData}
           />
         </div>
       </div>

@@ -1,10 +1,7 @@
 /** @format */
 
 import CommonHero from "@/components/CommonComponents/CommonHero";
-
-import AboutAndForm from "@/components/MaterialsComponents.tsx/AboutAndForm";
-import MaterialSection from "@/components/MaterialsComponents.tsx/MaterialSection";
-import SoilSection from "@/components/MaterialsComponents.tsx/SoilSection";
+import CombineSections from "@/components/MaterialsComponents.tsx/CombineSections";
 import React from "react";
 
 const MaterialPage = () => {
@@ -18,12 +15,7 @@ const MaterialPage = () => {
         textColor="text-white"
       />
 
-      <MaterialSection />
-
-      <SoilSection />
-
-      {/* about and form section */}
-      <AboutAndForm />
+      <CombineSections />
     </div>
   );
 };

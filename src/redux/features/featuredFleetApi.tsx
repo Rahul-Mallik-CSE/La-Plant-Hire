@@ -25,6 +25,12 @@ const featuredFleetApi = baseApi.injectEndpoints({
         method: "GET",
       }),
     }),
+    getAllServices: build.query<FeaturedFleetResponse, void>({
+      query: () => ({
+        url: "/managements/lisa_hire-serivices/",
+        method: "GET",
+      }),
+    }),
     submitEnquiry: build.mutation<EnquiryResponse, EnquirySubmitData>({
       query: (data) => ({
         url: "/managements/sent-hiring-enquiree/",
@@ -35,6 +41,9 @@ const featuredFleetApi = baseApi.injectEndpoints({
   }),
   overrideExisting: false,
 });
-export const { useGetFeaturedFleetQuery, useSubmitEnquiryMutation } =
-  featuredFleetApi;
+export const {
+  useGetFeaturedFleetQuery,
+  useGetAllServicesQuery,
+  useSubmitEnquiryMutation,
+} = featuredFleetApi;
 export default featuredFleetApi;

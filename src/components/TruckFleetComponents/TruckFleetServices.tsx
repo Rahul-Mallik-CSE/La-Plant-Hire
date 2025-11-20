@@ -10,6 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Skeleton } from "../ui/skeleton";
 
 const TruckFleetServices = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -47,7 +48,13 @@ const TruckFleetServices = () => {
   if (isLoading) {
     return (
       <div className="py-6 md:py-8 lg:py-12 xl:py-16 mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
-        <div className="text-center text-primary">Loading truck fleet...</div>
+        <div className="flex  w-full items-center justify-center">
+          <div className="space-y-2">
+            <Skeleton className="h-4 w-[250px]" />
+            <Skeleton className="h-4 w-[200px]" />
+            <Skeleton className="h-4 w-[150px]" />
+          </div>
+        </div>
       </div>
     );
   }

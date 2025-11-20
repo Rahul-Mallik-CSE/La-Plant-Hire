@@ -5,6 +5,7 @@
 import React from "react";
 import MaterialCard from "./SubComponents/MaterialCard";
 import { useGetMaterialsQuery } from "@/redux/features/materialApi";
+import { Skeleton } from "../ui/skeleton";
 
 const SoilSection = () => {
   const { data, isLoading, isError } = useGetMaterialsQuery();
@@ -16,7 +17,13 @@ const SoilSection = () => {
     return (
       <section className="py-6 md:py-8 lg:py-12 xl:py-16">
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
-          <div className="text-center text-primary">Loading soils...</div>
+          <div className="flex  w-full items-center justify-center">
+            <div className="space-y-2">
+              <Skeleton className="h-4 w-[250px]" />
+              <Skeleton className="h-4 w-[200px]" />
+              <Skeleton className="h-4 w-[150px]" />
+            </div>
+          </div>
         </div>
       </section>
     );

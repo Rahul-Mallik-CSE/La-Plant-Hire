@@ -1,9 +1,9 @@
 /** @format */
 
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import MenuButtons from "./MenuButtons";
+import GetAQuote from "./GetAQuote";
 
 export default function Navbar() {
   return (
@@ -33,9 +33,7 @@ export default function Navbar() {
           <p className="text-xs md:text-sm lg:text-base">
             Call: <span className="font-bold">1300 52 34 78</span>
           </p>
-          <Button className="text-xs md:text-sm h-7 sm:h-8 px-2 md:px-4 bg-custom-orange rounded-sm hover:bg-custom-orange/80 border-2 border-orange-700 text-primary font-bold">
-            GET A QUOTE
-          </Button>
+          <GetAQuote />
         </div>
       </div>
     </header>

@@ -121,14 +121,14 @@ const EnquiryForm = forwardRef<HTMLDivElement, EnquiryFormProps>(
             onSuccess();
           }
         } else {
-          toast.error(response.message || "Failed to submit enquiry");
+          toast.error(
+            "Already have a pending or approved hire request for this service."
+          );
         }
       } catch (error) {
         console.error("Enquiry submission error:", error);
-        const err = error as { data?: { message?: string } };
-        toast.error(
-          err?.data?.message || "Failed to submit enquiry. Please try again."
-        );
+
+        toast.error("Already have a pending request for this service.");
       }
     };
 

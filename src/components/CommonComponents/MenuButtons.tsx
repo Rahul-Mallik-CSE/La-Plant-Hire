@@ -58,7 +58,7 @@ export default function MenuButtons() {
             pathname === "/soil-register" ? "bg-gray-600" : "hover:bg-gray-700"
           }`}
         >
-          Soild Register
+          Soil Register
         </Link>
       </nav>
 
@@ -135,7 +135,7 @@ export default function MenuButtons() {
               }`}
             >
               <Link href="/soil-register" className="w-full">
-                Soild Register
+                Soil Register
               </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>

@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/select";
 import { Calculator } from "lucide-react";
 import CalculatorModal from "./CalculatorModal";
+import { useSubmitCleanFillMutation } from "@/redux/features/contactApi";
+import { toast } from "react-toastify";
 
 export default function CleanFillForm() {
   const [formData, setFormData] = useState({
@@ -30,6 +32,7 @@ export default function CleanFillForm() {
     comments: "",
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [submitCleanFill, { isLoading }] = useSubmitCleanFillMutation();
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -40,9 +43,83 @@ export default function CleanFillForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    try {
+      const submitData = {
+        contact_name: formData.name,
+        contact_email: formData.email,
+        contact_phone: formData.phone,
+        suburb: formData.suburb,
+        street_address: formData.street,
+        volume: formData.volume,
+        fill_type_wanted: formData.fillType,
+        tripper_truck_access: formData.truckAccess,
+        comment: formData.comments,
+      };
+
+      const response = await submitCleanFill(submitData).unwrap();
+
+      if (response.success) {
+        toast.success(
+          response.message || "Clean fill enquiry submitted successfully!"
+        );
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          suburb: "",
+          street: "",
+          volume: "",
+          fillType: "",
+          truckAccess: "",
+          comments: "",
+        });
+      } else {
+        toast.error(response.message || "Failed to submit enquiry");
+      }
+    } catch (error) {
+      console.error("Clean fill submission error:", error);
+      const err = error as {
+        data?: {
+          message?: string;
+          data?: {
+            non_field_errors?: string[];
+            [key: string]: string[] | undefined;
+          };
+        };
+      };
+
+      // Check for specific validation errors
+      if (err?.data?.data) {
+        const errorData = err.data.data;
+
+        // Show non_field_errors first
+        if (
+          errorData.non_field_errors &&
+          errorData.non_field_errors.length > 0
+        ) {
+          toast.error(errorData.non_field_errors[0]);
+          return;
+        }
+
+        // Show other field errors
+        const firstError = Object.values(errorData).find(
+          (value) => Array.isArray(value) && value.length > 0
+        );
+        if (firstError && firstError.length > 0) {
+          toast.error(firstError[0]);
+          return;
+        }
+      }
+
+      // Fallback to generic message
+      toast.error(
+        "Already have a pending or approved hire request for this service."
+      );
+    }
   };
 
   return (
@@ -162,9 +239,10 @@ export default function CleanFillForm() {
         <div className="flex justify-end">
           <Button
             type="submit"
-            className="w-full sm:w-fit bg-custom-orange rounded-sm hover:bg-[#b36303] border-2 border-amber-800 text-white font-bold px-8"
+            disabled={isLoading}
+            className="w-full sm:w-fit bg-custom-orange rounded-sm hover:bg-[#b36303] border-2 border-amber-800 text-white font-bold px-8 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            SUBMIT
+            {isLoading ? "SUBMITTING..." : "SUBMIT"}
           </Button>
         </div>
       </form>

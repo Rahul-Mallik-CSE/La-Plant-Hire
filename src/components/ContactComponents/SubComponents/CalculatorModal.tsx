@@ -147,12 +147,12 @@ export default function CalculatorModal({
                 <span className="text-xs sm:text-sm text-primary">
                   {result.soilVolume.toFixed(2)} m³
                 </span>
-                <Button
+                {/* <Button
                   variant="link"
                   className="text-blue-500 hover:text-blue-700 p-0 h-auto"
                 >
                   Edit
-                </Button>
+                </Button> */}
               </div>
             </div>
 

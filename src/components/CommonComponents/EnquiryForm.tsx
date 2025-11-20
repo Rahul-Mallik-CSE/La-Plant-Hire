@@ -50,6 +50,7 @@ const EnquiryForm = forwardRef<HTMLDivElement, EnquiryFormProps>(
       details: "",
     });
 
+    const [customDays, setCustomDays] = useState("");
     const [submitEnquiry, { isLoading }] = useSubmitEnquiryMutation();
 
     // Update service when selectedService prop changes
@@ -86,7 +87,7 @@ const EnquiryForm = forwardRef<HTMLDivElement, EnquiryFormProps>(
         "1day": 1,
         "1week": 7,
         "1month": 30,
-        custom: 0,
+        custom: parseInt(customDays) || 0,
       };
 
       const durationDays = durationMap[formData.duration] || 0;
@@ -114,6 +115,7 @@ const EnquiryForm = forwardRef<HTMLDivElement, EnquiryFormProps>(
             duration: "",
             details: "",
           });
+          setCustomDays("");
           // Call onSuccess callback if provided (e.g., to close modal)
           if (onSuccess) {
             onSuccess();
@@ -209,9 +211,12 @@ const EnquiryForm = forwardRef<HTMLDivElement, EnquiryFormProps>(
 
           <Select
             value={formData.duration}
-            onValueChange={(value) =>
-              setFormData((prev) => ({ ...prev, duration: value }))
-            }
+            onValueChange={(value) => {
+              setFormData((prev) => ({ ...prev, duration: value }));
+              if (value !== "custom") {
+                setCustomDays("");
+              }
+            }}
           >
             <SelectTrigger className="w-full border sm:border-2 border-primary focus-visible:ring-0 text-xs sm:text-sm text-primary placeholder:text-primary/50 py-4 sm:py-5">
               <SelectValue placeholder="Select duration" />
@@ -223,6 +228,18 @@ const EnquiryForm = forwardRef<HTMLDivElement, EnquiryFormProps>(
               <SelectItem value="custom">Custom</SelectItem>
             </SelectContent>
           </Select>
+
+          {formData.duration === "custom" && (
+            <Input
+              type="number"
+              name="customDays"
+              placeholder="Enter number of days"
+              value={customDays}
+              onChange={(e) => setCustomDays(e.target.value)}
+              min="1"
+              className="w-full border sm:border-2 border-primary focus-visible:ring-0 text-xs sm:text-sm text-primary placeholder:text-primary/50 h-9 sm:h-11"
+            />
+          )}
 
           <Textarea
             name="details"

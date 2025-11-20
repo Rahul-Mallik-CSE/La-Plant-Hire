@@ -3,8 +3,19 @@
 import React from "react";
 import EnquiryForm from "../CommonComponents/EnquiryForm";
 import HireTermsConditions from "./SubComponents/HireTermsConditions";
+import type { EquipmentItem } from "@/types/equipmentTypes";
 
-const TermsAndForm = () => {
+interface TermsAndFormProps {
+  selectedService?: string;
+  services?: string[];
+  servicesData?: EquipmentItem[];
+}
+
+const TermsAndForm = ({
+  selectedService,
+  services,
+  servicesData,
+}: TermsAndFormProps) => {
   return (
     <section className="p-6 md:p-8 lg:p-12 xl:p-16 bg-background2">
       <div className="max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
@@ -13,7 +24,12 @@ const TermsAndForm = () => {
           <HireTermsConditions />
 
           {/* Right Column - Form */}
-          <EnquiryForm showHeaderWithIcon={true} />
+          <EnquiryForm
+            showHeaderWithIcon={true}
+            selectedService={selectedService}
+            services={services}
+            servicesData={servicesData}
+          />
         </div>
       </div>
     </section>

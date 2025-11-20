@@ -7,33 +7,33 @@ import type { EquipmentCardProps } from "@/types/equipmentTypes";
 import { BellRing, Check } from "lucide-react";
 import Image from "next/image";
 import { PiSelectionPlusBold } from "react-icons/pi";
+import { getFullImageFullUrl } from "@/lib/utils";
 
 export default function EquipmentCard({
-  name,
-  image,
-  label,
-  description,
-  features,
-  specs,
-  isExpanding,
+  equipment,
+  onEnquiryClick,
 }: EquipmentCardProps) {
+  const isExpanding = !equipment.image;
+  const features = equipment.ideal_for.map((item) => item.name);
+  const specs = equipment.extra_note;
   return (
     <div className="overflow-visible relative pt-7">
       {/* Image Container - Overflows above the card */}
       <div className="relative h-72 flex items-center justify-center -mt-7 mb-0 z-10">
         {!isExpanding && (
           <Image
-            src={image || "/placeholder.svg"}
-            alt={name}
+            src={getFullImageFullUrl(equipment.image)}
+            alt={equipment.name}
             width={400}
             height={400}
+            unoptimized
             className="object-contain w-full h-full mb-6 mx-2"
           />
         )}
       </div>
-      {label && (
+      {equipment.category.name && !isExpanding && (
         <div className="absolute top-28 left-1 bg-background2 text-custom-orange z-100 px-3 py-1 rounded text-xs font-bold">
-          {label}
+          {equipment.category.name}
         </div>
       )}
       {/* Background div */}
@@ -56,11 +56,17 @@ export default function EquipmentCard({
       {/* Content */}
       <div className=" py-4 bg-white rounded-b-lg">
         <h3 className="text-base sm:text-lg lg:text-xl font-bold text-primary mb-1 md:mb-2">
-          {name}
+          {equipment.name}
         </h3>
 
         <>
-          <p className="text-primary text-sm mb-1 font-bold">{description}</p>
+          {!isExpanding ? (
+            <p className="text-primary text-sm mb-1 font-bold">Ideal For</p>
+          ) : (
+            <p className="text-primary text-sm mb-1 font-bold">
+              We&apos;re expanding our fleet with new equipment
+            </p>
+          )}
 
           {/* Features */}
           <ul className="space-y-2 mb-6">
@@ -75,7 +81,7 @@ export default function EquipmentCard({
           {/* Specs */}
           {specs && (
             <p className="text-xs text-primary bg-background2 mb-6 p-2 border-b border-border">
-              {specs.split("\n").map((line, idx) => (
+              {specs.split("\\n").map((line, idx) => (
                 <div key={idx}>{line}</div>
               ))}
             </p>
@@ -84,16 +90,19 @@ export default function EquipmentCard({
           {/* Price and CTA */}
           {!isExpanding ? (
             <div className="flex w-full items-center justify-end">
-              {/* <span className="text-base sm:text-lg lg:text-xl font-bold text-custom-orange">
-                {price}
-              </span> */}
-              <Button className="border-1 md:border-2 border-primary text-primary px-2 md:px-4 py-2 h-6 sm:h-7 md:h-8 rounded text-xs  font-bold bg-transparent hover:bg-gray-100  transition">
+              <Button
+                onClick={() => onEnquiryClick(equipment.name)}
+                className="border-1 md:border-2 border-primary text-primary px-2 md:px-4 py-2 h-6 sm:h-7 md:h-8 rounded text-xs  font-bold bg-transparent hover:bg-gray-100  transition"
+              >
                 ENQUIRE NOW
               </Button>
             </div>
           ) : (
             <div className="flex w-full items-center justify-center">
-              <Button className="w-full border-1 md:border-2 text-amber-400 border-amber-400 px-2 md:px-4 py-2 h-6 sm:h-7 md:h-8 rounded text-xs  font-bold bg-transparent hover:bg-amber-50  transition">
+              <Button
+                onClick={() => onEnquiryClick(equipment.name)}
+                className="w-full border-1 md:border-2 text-amber-400 border-amber-400 px-2 md:px-4 py-2 h-6 sm:h-7 md:h-8 rounded text-xs  font-bold bg-transparent hover:bg-amber-50  transition"
+              >
                 <BellRing /> ENQUIRE NOW
               </Button>
             </div>

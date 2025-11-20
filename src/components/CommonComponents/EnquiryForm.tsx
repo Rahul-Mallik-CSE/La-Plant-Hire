@@ -16,13 +16,17 @@ import {
 import { useSubmitEnquiryMutation } from "@/redux/features/featuredFleetApi";
 import { toast } from "react-toastify";
 import { PiHandshake } from "react-icons/pi";
-import type { FeaturedFleetItem } from "@/types/AllHomeTypes";
+
+interface ServiceItem {
+  id: number;
+  name: string;
+}
 
 interface EnquiryFormProps {
   showHeaderWithIcon?: boolean;
   selectedService?: string;
   services?: string[];
-  servicesData?: FeaturedFleetItem[];
+  servicesData?: ServiceItem[];
   onSuccess?: () => void;
 }
 
@@ -69,7 +73,7 @@ const EnquiryForm = forwardRef<HTMLDivElement, EnquiryFormProps>(
 
       // Find service ID by service name
       const serviceItem = servicesData.find(
-        (item: FeaturedFleetItem) => item.name === formData.service
+        (item) => item.name === formData.service
       );
 
       if (!serviceItem) {

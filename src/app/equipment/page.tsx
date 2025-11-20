@@ -1,8 +1,8 @@
 /** @format */
 
-import EquipmentGrid from "@/components/EquipmentComponents/EquipmentGrid";
+import EquipmentGridAndTermsForm from "@/components/EquipmentComponents/EquipmentGridAndTermsForm";
 import EquipmentHero from "@/components/EquipmentComponents/EquipmentHero";
-import TermsAndForm from "@/components/EquipmentComponents/TermsAndForm";
+
 import CTAsection from "@/components/TruckFleetComponents/CTASection";
 import React from "react";
 
@@ -12,12 +12,7 @@ const EquipmentPage = () => {
       {/*hero section */}
       <EquipmentHero />
 
-      {/* Equipment grid section */}
-
-      <EquipmentGrid />
-
-      {/* Terms and form */}
-      <TermsAndForm />
+      <EquipmentGridAndTermsForm />
 
       {/* CTA Section */}
       <CTAsection />

@@ -3,8 +3,14 @@
 import React from "react";
 import EnquiryForm from "../CommonComponents/EnquiryForm";
 import SoilAbout from "./SubComponents/SoilAbout";
+import type { MaterialItem } from "@/types/materialTypes";
 
-const AboutAndForm = () => {
+interface AboutAndFormProps {
+  services?: string[];
+  servicesData?: MaterialItem[];
+}
+
+const AboutAndForm = ({ services, servicesData }: AboutAndFormProps) => {
   return (
     <section className="p-6 md:p-8 lg:p-12 xl:p-16 bg-background2">
       <div className="max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
@@ -13,7 +19,7 @@ const AboutAndForm = () => {
           <SoilAbout />
 
           {/* Right Column - Form */}
-          <EnquiryForm />
+          <EnquiryForm services={services} servicesData={servicesData} />
         </div>
       </div>
     </section>

@@ -18,7 +18,7 @@ const TruckFleetServices = () => {
   const [selectedService, setSelectedService] = useState("");
   const { data, isLoading, isError } = useGetTruckFleetQuery();
 
-  const filters = ["All", "Body Trucks", "Excavator", "Machinery"];
+  const filters = ["All", "Body Trucks","Twin Steer", "Truck and Trailer" ];
 
   // Filter trucks based on active category
   const filteredTrucks = useMemo(() => {

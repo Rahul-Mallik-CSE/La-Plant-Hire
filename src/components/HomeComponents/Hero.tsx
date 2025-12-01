@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import GetAQuote from "../CommonComponents/GetAQuote";
 
 export default function HeroSection() {
   return (
@@ -58,12 +59,10 @@ export default function HeroSection() {
                 />
                 VIEW OUR FLEET
               </Button>
-              <Button
-                variant="outline"
-                className="border-2 border-gray-400 sm:border-primary text-xs md:text-base text-gray-400 sm:text-primary hover:bg-black hover:text-white font-bold  px-2 md:px-4 py-0.5 md:py-3 rounded-sm md:border-2  bg-transparent"
-              >
-                GET A QUOTE NOW
-              </Button>
+              <GetAQuote
+                text="GET A QUOTE NOW"
+                className="border-2 border-gray-400 sm:border-primary text-xs md:text-base text-gray-400 sm:text-primary hover:bg-black hover:text-white font-bold px-2 md:px-4 py-0.5 md:py-3 rounded-sm md:border-2 bg-transparent"
+              />
             </div>
           </div>
         </div>

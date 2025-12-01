@@ -13,7 +13,15 @@ import {
 import EnquiryForm from "./EnquiryForm";
 import { useGetAllServicesQuery } from "@/redux/features/featuredFleetApi";
 
-const GetAQuote = () => {
+interface GetAQuoteProps {
+  text?: string;
+  className?: string;
+}
+
+const GetAQuote = ({
+  text = "GET A QUOTE",
+  className = "",
+}: GetAQuoteProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { data } = useGetAllServicesQuery();
 
@@ -30,11 +38,8 @@ const GetAQuote = () => {
 
   return (
     <>
-      <Button
-        onClick={() => setIsModalOpen(true)}
-        className="text-xs md:text-sm h-7 sm:h-8 px-2 md:px-4 bg-custom-orange rounded-sm hover:bg-custom-orange/80 border-2 border-orange-700 text-primary font-bold"
-      >
-        GET A QUOTE
+      <Button onClick={() => setIsModalOpen(true)} className={className}>
+        {text}
       </Button>
 
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>

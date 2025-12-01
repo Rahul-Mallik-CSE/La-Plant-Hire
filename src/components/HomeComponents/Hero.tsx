@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import GetAQuote from "../CommonComponents/GetAQuote";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -50,7 +51,10 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex gap-2 md:gap-4 flex-wrap">
-              <Button className="bg-orange-500 hover:bg-orange-600 text-xs md:text-base text-primary font-bold px-2 md:px-4 py-0.5 md:py-3 rounded-sm border md:border-2 border-primary flex items-center gap-1 md:gap-2">
+              <Link
+                href="/truck-fleet"
+                className="bg-orange-500 hover:bg-orange-600 text-xs md:text-base text-primary font-bold px-2 md:px-4 py-0 rounded-sm border md:border-2 border-primary flex items-center gap-1 md:gap-2"
+              >
                 <Image
                   src="/logo/truck-logo.png"
                   alt="T"
@@ -58,10 +62,10 @@ export default function HeroSection() {
                   height={20}
                 />
                 VIEW OUR FLEET
-              </Button>
+              </Link>
               <GetAQuote
                 text="GET A QUOTE NOW"
-                className="border-2 border-gray-400 sm:border-primary text-xs md:text-base text-gray-400 sm:text-primary hover:bg-black hover:text-white font-bold px-2 md:px-4 py-0.5 md:py-3 rounded-sm md:border-2 bg-transparent"
+                className="border-2 border-gray-400 sm:border-primary text-xs md:text-base text-gray-400 sm:text-primary hover:bg-black hover:text-white font-bold px-2 md:px-4 py-0.5 md:py-4 rounded-sm md:border-2 bg-transparent"
               />
             </div>
           </div>

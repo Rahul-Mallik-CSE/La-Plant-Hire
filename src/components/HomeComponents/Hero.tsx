@@ -58,8 +58,8 @@ export default function HeroSection() {
                 <Image
                   src="/logo/truck-logo.png"
                   alt="T"
-                  width={20}
-                  height={20}
+                  width={18}
+                  height={18}
                 />
                 VIEW OUR FLEET
               </Link>

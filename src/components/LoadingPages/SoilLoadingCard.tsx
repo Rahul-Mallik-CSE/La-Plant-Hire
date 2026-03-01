@@ -4,7 +4,7 @@ import { Skeleton } from "../ui/skeleton";
 
 const SoilLoadingCard = () => {
   return (
-    <div className="max-w-96 overflow-hidden">
+    <div className="overflow-visible relative pt-7 w-80">
       {/* Image with overlayed title (matches MaterialCard) */}
       <div className="relative h-48 md:h-96 lg:h-[400px] xl:h-[430px] w-full">
         <Skeleton className="w-full h-full" />
@@ -28,9 +28,6 @@ const SoilLoadingCard = () => {
         <div className="space-y-1.5 pt-1">
           {[48, 40, 44].map((w, i) => (
             <div key={i} className="flex items-start gap-1">
-              <span className="text-primary mr-1 text-xs font-bold mt-0.5">
-                •
-              </span>
               <Skeleton className={`h-3.5 w-${w}`} />
             </div>
           ))}

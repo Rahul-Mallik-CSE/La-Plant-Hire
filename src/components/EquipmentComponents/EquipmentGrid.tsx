@@ -18,7 +18,7 @@ export default function EquipmentGrid({ onEnquiryClick }: EquipmentGridProps) {
       <section className="w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 py-8 md:py-12 lg:py-16">
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[1, 2, 3, 4].map((i) => (
+            {[1, 2, 3].map((i) => (
               <ExcavetorLoadingCard key={i} />
             ))}
           </div>

@@ -30,7 +30,12 @@ export default function ContactInfo() {
 
         {/* Get Directions Button */}
         <div className="w-full flex justify-end">
-          <Button className="text-xs h-8 px-2 bg-emerald-500 hover:bg-emerald-600 border-emerald-700 text-white font-bold  rounded transition flex items-center justify-center gap-1.5 mt-8">
+          <Button
+            onClick={() =>
+              window.open("https://maps.app.goo.gl/zqNXKTMkdEqEB8Uv8", "_blank")
+            }
+            className="text-xs h-8 px-2 bg-emerald-500 hover:bg-emerald-600 border-emerald-700 text-white font-bold  rounded transition flex items-center justify-center gap-1.5 mt-8"
+          >
             <FaDirections className="w-3 h-3 text-white " />
             GET DIRECTIONS
           </Button>

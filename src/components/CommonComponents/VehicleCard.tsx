@@ -35,7 +35,6 @@ const VehicleCard: React.FC<VehicleCardProps> = ({
           fill
           className="object-cover"
           sizes="(max-width: 640px) 320px, 384px"
-          unoptimized
         />
       </div>
       <div className="py-3 sm:py-6">

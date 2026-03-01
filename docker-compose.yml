@@ -1,0 +1,37 @@
+version: '3.9'
+
+services:
+  django:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: django
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    command: >
+      sh -c "python manage.py migrate &&
+             gunicorn la_hire.wsgi:application --bind 0.0.0.0:8000"
+
+  react:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: react
+    ports:
+      - "3000:80"  # 3000 on VPS maps to Nginx serving React
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - django
+      - react

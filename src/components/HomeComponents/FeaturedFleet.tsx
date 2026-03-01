@@ -4,7 +4,7 @@
 
 import { useGetFeaturedFleetQuery } from "@/redux/features/featuredFleetApi";
 import VehicleCard from "../CommonComponents/VehicleCard";
-import { Skeleton } from "../ui/skeleton";
+import TruckLoadingCard from "../LoadingPages/TruckLoadingCard";
 
 interface FeaturedFleetProps {
   onEnquiryClick?: (serviceName: string) => void;
@@ -17,12 +17,20 @@ export default function FeaturedFleet({ onEnquiryClick }: FeaturedFleetProps) {
     return (
       <section className="pb-6 md:pb-8 lg:pb-12 xl:pb-16">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
-          <div className="flex  w-full items-center justify-center">
-            <div className="space-y-2">
-              <Skeleton className="h-4 w-[250px]" />
-              <Skeleton className="h-4 w-[200px]" />
-              <Skeleton className="h-4 w-[150px]" />
+          {/* Header skeleton */}
+          <div className="text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 space-y-2">
+            <div className="flex justify-center">
+              <div className="h-4 w-32 bg-muted rounded animate-pulse" />
             </div>
+            <div className="flex justify-center">
+              <div className="h-4 w-64 bg-muted rounded animate-pulse" />
+            </div>
+          </div>
+          {/* Card skeletons */}
+          <div className="flex flex-col md:flex-row flex-wrap gap-4 xl:gap-12 2xl:gap-32 w-full items-center justify-center">
+            {[1, 2, 3].map((i) => (
+              <TruckLoadingCard key={i} />
+            ))}
           </div>
         </div>
       </section>

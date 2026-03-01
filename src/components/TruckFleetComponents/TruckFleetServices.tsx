@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Skeleton } from "../ui/skeleton";
+import TruckLoadingCard from "../LoadingPages/TruckLoadingCard";
 
 const TruckFleetServices = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -18,7 +18,7 @@ const TruckFleetServices = () => {
   const [selectedService, setSelectedService] = useState("");
   const { data, isLoading, isError } = useGetTruckFleetQuery();
 
-  const filters = ["All", "Body Trucks","Twin Steer", "Truck and Trailer" ];
+  const filters = ["All", "Body Trucks", "Twin Steer", "Truck and Trailer"];
 
   // Filter trucks based on active category
   const filteredTrucks = useMemo(() => {
@@ -48,13 +48,25 @@ const TruckFleetServices = () => {
   if (isLoading) {
     return (
       <div className="py-6 md:py-8 lg:py-12 xl:py-16 mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
-        <div className="flex  w-full items-center justify-center">
-          <div className="space-y-2">
-            <Skeleton className="h-4 w-[250px]" />
-            <Skeleton className="h-4 w-[200px]" />
-            <Skeleton className="h-4 w-[150px]" />
+        {/* Filter buttons skeleton */}
+        <section className="max-w-7xl mx-auto px-4 pb-6 sm:pb-8 md:pb-12">
+          <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 flex-wrap">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="h-7 w-24 bg-muted rounded-full animate-pulse"
+              />
+            ))}
           </div>
-        </div>
+        </section>
+        {/* Card skeletons */}
+        <section className="max-w-full mx-auto px-4">
+          <div className="flex flex-col md:flex-row flex-wrap gap-4 sm:gap-8 md:gap-12 xl:gap-16 items-center justify-center">
+            {[1, 2, 3].map((i) => (
+              <TruckLoadingCard key={i} />
+            ))}
+          </div>
+        </section>
       </div>
     );
   }
